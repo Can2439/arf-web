@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARF İleri Teknoloji | Power Electronics & AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-red: #e30a17;
+            --deep-black: #050505;
+            --navbar-bg: rgba(5, 5, 5, 0.85);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--deep-black);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ⚠️ VİDEO ARKA PLAN AYARLARI */
+        .v-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2; /* En arkaya itiyoruz */
+        }
+
+        #bgVideo {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover; /* Videoyu ekranı kaplayacak şekilde esnetir/keser */
+            filter: brightness(0.4); /* Yazıların okunması için videoyu karartır */
+        }
+
+        /* Video üzerine hafif bir doku/maske */
+        .v-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: -1;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--navbar-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(227, 10, 23, 0.2);
+            z-index: 1000;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header .brand {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            color: #fff;
+            text-decoration: none;
+        }
+        header .brand span { color: var(--primary-red); }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            letter-spacing: 10px;
+            margin: 0;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #fff 40%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .slogan {
+            color: var(--primary-red);
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 5px;
+            font-weight: 400;
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+
+        section {
+            padding: 120px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            background: rgba(5, 5, 5, 0.7); /* İçerik okunması için yarı saydam arka plan */
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .section-title::before, .section-title::after {
+            content: ""; width: 50px; height: 1px; background: var(--primary-red);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .card i { font-size: 2.5rem; color: var(--primary-red); margin-bottom: 20px; }
+
+        .btn {
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            display: inline-block;
+            margin: 10px;
+        }
+        .btn-primary { background: var(--primary-red); color: white; }
+        .btn-outline { border: 1px solid #444; color: #fff; }
+
+        .footer {
+            padding: 80px 20px;
+            background-color: rgba(3, 3, 3, 0.9);
+            text-align: center;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; letter-spacing: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="v-container">
+        <video autoplay muted loop playsinline id="bgVideo">
+            <source src="background.mp4" type="video/mp4">
+            </video>
+    </div>
+    <div class="v-overlay"></div>
+
+    <header>
+        <a href="#" class="brand">ARF <span>İLERİ TEKNOLOJİ</span></a>
+    </header>
+
+    <div class="hero">
+        <h1>ARF İLERİ TEKNOLOJİ</h1>
+        <p class="slogan">POWERING THE FUTURE</p>
+        <div class="cta-group">
+            <a href="#about" class="btn btn-outline">MİSYONUMUZ</a>
+            <a href="mailto:can@arftech.tr" class="btn btn-primary">İLETİŞİM</a>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="section-title">TEKNOLOJİK ODAK</div>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-bolt"></i>
+                <h3>Güç Elektroniği</h3>
+                <p>SiC/GaN tabanlı, yüksek verimli güç dönüşüm sistemleri ile savunma platformlarına güç veriyoruz.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-brain"></i>
+                <h3>Edge AI</h3>
+                <p>Yapay zeka algoritmalarının donanım seviyesinde entegrasyonu ile akıllı enerji yönetimi.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-shield-halved"></i>
+                <h3>Savunma Standartları</h3>
+                <p>MIL-STD uyumlu, zorlu çevresel koşullara dayanıklı kritik sistem tasarımları.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <p><i class="fas fa-building" style="color: var(--primary-red)"></i> <strong>TEKNOPARK İSTANBUL</strong></p>
+        <p>Pendik, İstanbul / Türkiye</p>
+        <p style="color: var(--primary-red); font-weight: bold; margin-top: 30px;">SAYZEK EKOSİSTEM ÜYESİ</p>
+        <p>&copy; 2026 ARF İLERİ TEKNOLOJİ</p>
+        <div style="margin-top: 20px;">
+            <a href="https://www.linkedin.com/company/arfileri" target="_blank" style="color: #666;">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
