@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GaN Teknolojisi | ARF İleri Teknoloji</title>
+    <title>MIL-STD-810H Standartları | ARF İleri Teknoloji</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.PNG">
+    
     <style>
         :root { --primary-red: #e30a17; --deep-black: #050505; }
         body { background-color: var(--deep-black); color: #ffffff; font-family: 'Montserrat', sans-serif; margin: 0; line-height: 1.8; }
         
-        /* Sabit Arka Plan */
         .v-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
         #bgVideo { width: 100vw; height: 100vh; object-fit: cover; filter: brightness(0.2); }
         .v-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: -1; }
@@ -28,6 +29,10 @@
         .content h2 { font-family: 'Orbitron', sans-serif; color: var(--primary-red); font-size: 1.4rem; margin-top: 40px; }
         .content p { font-size: 1.1rem; color: #ccc; margin-bottom: 25px; }
         .highlight-box { background: rgba(227, 10, 23, 0.1); border-left: 4px solid var(--primary-red); padding: 20px; margin: 30px 0; font-style: italic; }
+        
+        ul { list-style: none; padding: 0; }
+        ul li { margin-bottom: 15px; padding-left: 30px; position: relative; }
+        ul li::before { content: "\f12e"; font-family: "Font Awesome 5 Free"; font-weight: 900; position: absolute; left: 0; color: var(--primary-red); }
 
         footer { text-align: center; padding: 50px; background: rgba(3, 3, 3, 0.9); margin-top: 50px; }
     </style>
@@ -41,21 +46,28 @@
     <article class="article-container">
         <a href="yazilar.html" class="back-link"><i class="fas fa-arrow-left"></i> TÜM YAZILARA DÖN</a>
         
-        <h1>GaN Teknolojisi ve Güç Elektroniğinde Yeni Dönem</h1>
-        <div class="meta">YAYINLANMA: 15 ŞUBAT 2026 | YAZAR: CAN SEVER</div>
+        <h1>MIL-STD-810H: Donanım Tasarımında Operasyonel Dayanıklılık</h1>
+        <div class="meta">YAYINLANMA: 16 ŞUBAT 2026 | YAZAR: CAN SEVER</div>
 
         <div class="content">
-            <p>Güç elektroniği dünyası, geleneksel silikon (Si) tabanlı yarı iletkenlerin fiziksel sınırlarına ulaştığı bir dönüm noktasında. Savunma sanayiinde ihtiyaç duyulan yüksek güç yoğunluğu ve minyatürizasyon, <strong>Galyum Nitrat (GaN)</strong> teknolojisini bir zorunluluk haline getiriyor.</p>
+            <p>Savunma sanayiinde bir donanımın başarısı, laboratuvar ortamındaki performansından ziyade sahadaki en uç koşullarda gösterdiği dirençle ölçülür. <strong>MIL-STD-810H</strong>, bir sistemin çevresel stres faktörlerine karşı tasarım limitlerini belirleyen küresel bir standarttır.</p>
 
             <div class="highlight-box">
-                "GaN tabanlı sistemler, geleneksel sistemlere göre %90'a varan verimlilik artışı ve %50 daha az hacim sunmaktadır."
+                "Askeri standartlara uyumluluk, sadece bir sertifika değil; sistem güvenilirliğinin temel taşıdır."
             </div>
 
-            <h2>Neden GaN?</h2>
-            <p>GaN, geniş bant aralığına (wide bandgap) sahip bir malzemedir. Bu özelliği, elektronların daha yüksek hızlarda hareket etmesini sağlar. Sonuç olarak; daha yüksek anahtarlama frekansları, daha düşük ısı kayıpları ve daha küçük pasif bileşenler (indüktör ve kapasitör) kullanma imkanı doğar.</p>
+            <h2>Tasarım Sürecinde Çevresel Testler</h2>
+            <p>ARF İleri Teknoloji olarak, donanım tasarım süreçlerimizi henüz şematik aşamasındayken MIL-STD-810H kriterlerini gözeterek kurguluyoruz. Bu standart, donanımın ömür döngüsü boyunca karşılaşabileceği şu temel etkileri kapsar:</p>
 
-            <h2>Savunma Sanayiindeki Uygulamalar</h2>
-            <p>İHA/SİHA sistemlerinden radar ünitelerine kadar her alanda ağırlık ve verimlilik kritiktir. ARF İleri Teknoloji olarak, GaN teknolojisini kullanarak kritik görev donanımlarının termal yönetimini optimize ediyor ve platformların operasyon süresini artırıyoruz.</p>
+            <ul>
+                <li><strong>Sıcaklık Şoku:</strong> Ani sıcaklık değişimlerinde malzeme genleşmesi ve bileşen stresinin yönetimi.</li>
+                <li><strong>Mekanik Titreşim:</strong> Platformların (Kara, Hava, Deniz) titreşim profillerine göre PCB ve komponent dayanımı.</li>
+                <li><strong>Nem ve Korozyon:</strong> Tropikal veya deniz tipi ortamlarda PCB kaplama (conformal coating) stratejileri.</li>
+                <li><strong>Fonksiyonel Şok:</strong> Çarpışma veya ateşleme anındaki yüksek G kuvvetlerine karşı yapısal bütünlük.</li>
+            </ul>
+
+            <h2>Mühendislik Yaklaşımımız</h2>
+            <p>Güç elektroniği tasarımlarımızda, yüksek anahtarlama frekanslarının yarattığı ısıl yükü tahliye ederken, aynı zamanda MIL-STD uyumlu sızdırmazlık ve mekanik koruma sağlıyoruz. GaN tabanlı kompakt tasarımlarımızda, termal pad seçiminden gövde tasarımına kadar her detayda bu standartların izi bulunmaktadır.</p>
         </div>
     </article>
 
