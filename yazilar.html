@@ -100,6 +100,7 @@
         .blog-card:hover {
             background: rgba(255, 255, 255, 0.1);
             transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(227, 10, 23, 0.2);
         }
 
         .blog-date {
@@ -107,12 +108,32 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 0.8rem;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* IEEE Tag Stili */
+        .ieee-tag {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
         }
 
         .blog-card h2 {
             margin: 10px 0;
             font-family: 'Orbitron', sans-serif;
             font-size: 1.4rem;
+        }
+        
+        .blog-card p {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-top: 10px;
         }
 
         .back-btn {
@@ -122,14 +143,25 @@
             text-decoration: none;
             font-family: 'Orbitron', sans-serif;
             font-size: 0.9rem;
+            transition: 0.3s;
         }
 
         .back-btn:hover { color: var(--primary-red); }
 
         footer {
             text-align: center;
-            padding: 50px;
+            padding: 40px;
             background: rgba(3, 3, 3, 0.9);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .footer-social a {
+            color: #888;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .footer-social a:hover {
+            color: var(--primary-red);
         }
     </style>
 </head>
@@ -151,24 +183,34 @@
         
         <h1 class="page-title">TEKNİK YAZILAR</h1>
 
-        <a href="gan-teknolojisi.html" class="blog-card">
-    <div class="blog-date">15 ŞUBAT 2026</div>
-    <h2>GaN Teknolojisi ve Güç Elektroniğinde Verimlilik</h2>
-    ...
-    </a>
+        <a href="gan-emi-analizi.html" class="blog-card">
+            <div class="blog-date"><span class="ieee-tag">IEEE REVIEW</span> 17 ŞUBAT 2026</div>
+            <h2>GaN Tabanlı Dönüştürücülerde EMI Gürültüsü ve Filtreleme Teknikleri</h2>
+            <p>Aktif EMI filtreleme tekniklerinin savunma sanayii ve MIL-STD-461 standartları perspektifiyle incelenmesi ve saha uygulamalarındaki zorluklar.</p>
+        </a>
 
-       <a href="mil-std-810h.html" class="blog-card">
-    <div class="blog-date">16 ŞUBAT 2026</div>
-    <h2>MIL-STD-810H Standartlarına Göre Donanım Tasarımı</h2>
-    ...
-    </a>
+        <a href="mil-std-810h.html" class="blog-card">
+            <div class="blog-date">16 ŞUBAT 2026</div>
+            <h2>MIL-STD-810H Standartlarına Göre Donanım Tasarımı</h2>
+            <p>Zorlu çevresel koşullarda çalışacak askeri sınıf güç elektroniği sistemlerinin mekanik, termal ve titreşim dayanımı tasarım kriterleri.</p>
+        </a>
+
+        <a href="gan-teknolojisi.html" class="blog-card">
+            <div class="blog-date">15 ŞUBAT 2026</div>
+            <h2>GaN Teknolojisi ve Güç Elektroniğinde Verimlilik</h2>
+            <p>Galyum Nitrat (GaN) tabanlı geniş bant aralıklı (WBG) yarı iletkenlerin geleneksel silikon sistemlere göre avantajları ve güç yoğunluğuna etkileri.</p>
+        </a>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 ARF İLERİ TEKNOLOJİ</p>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">&copy; 2026 ARF İLERİ TEKNOLOJİ</p>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/company/arf-ileri-teknoloji" target="_blank">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+        </div>
     </footer>
 
 </body>
-
 </html>
