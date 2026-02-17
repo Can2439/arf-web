@@ -6,41 +6,135 @@
     <title>İHA Güç Sistemi Termal Analiz | Case Study</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        :root { --case-blue: #00d4ff; --deep-black: #050505; }
-        body { background-color: var(--deep-black); color: #e0e0e0; font-family: 'Montserrat', sans-serif; margin: 0; line-height: 1.8; }
-        header { position: fixed; top: 0; width: 100%; background-color: rgba(5, 5, 5, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--case-blue); z-index: 1000; padding: 15px 0; text-align: center; }
-        header .brand { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; letter-spacing: 4px; color: #fff; text-decoration: none; }
-        .article-wrapper { padding: 140px 20px 80px; max-width: 850px; margin: 0 auto; }
-        .tag-case { border: 1px solid var(--case-blue); color: var(--case-blue); padding: 5px 15px; font-family: 'Orbitron'; font-size: 0.8rem; }
-        .results-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: rgba(255,255,255,0.02); }
-        .results-table td { border: 1px solid rgba(0, 212, 255, 0.2); padding: 20px; text-align: center; }
-        .result-val { display: block; font-size: 2rem; color: var(--case-blue); font-weight: bold; font-family: 'Orbitron'; }
+        :root {
+            --case-blue: #00d4ff; /* Case Study'ye özel Mavi renk */
+            --deep-black: #050505;
+        }
+
+        body {
+            background-color: var(--deep-black);
+            color: #e0e0e0;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        /* EKLENEN: Arka Plan Videosu Ayarları */
+        .v-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
+        #bgVideo { width: 100vw; height: 100vh; object-fit: cover; filter: brightness(0.2); } /* Parlaklık kısıldı */
+        .v-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.9) 100%); z-index: -1; }
+
+        header {
+            position: fixed; top: 0; width: 100%;
+            background-color: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--case-blue);
+            z-index: 1000; padding: 15px 0; text-align: center;
+        }
+        header .brand {
+            font-family: 'Orbitron', sans-serif; font-size: 1.2rem;
+            letter-spacing: 4px; color: #fff; text-decoration: none;
+        }
+
+        .article-wrapper {
+            padding: 140px 20px 80px;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* EKLENEN: Geri Butonu Stili */
+        .back-btn {
+            display: inline-block; margin-bottom: 30px; color: #ccc;
+            text-decoration: none; font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem; transition: 0.3s;
+        }
+        .back-btn:hover { color: var(--case-blue); transform: translateX(-5px); }
+
+        .tag-case {
+            border: 1px solid var(--case-blue); color: var(--case-blue);
+            padding: 5px 15px; font-family: 'Orbitron'; font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        /* Tablo Stilleri */
+        .results-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: rgba(0, 212, 255, 0.05); }
+        .results-table td { border: 1px solid rgba(0, 212, 255, 0.2); padding: 20px; text-align: center; vertical-align: middle; }
+        .result-val { display: block; font-size: 2.5rem; color: var(--case-blue); font-weight: bold; font-family: 'Orbitron'; margin-bottom: 5px; }
+        .result-label { font-size: 0.9rem; color: #ccc; font-family: 'Share Tech Mono'; }
+
+        h1 { font-family:'Orbitron'; color:white; margin:20px 0; font-size: 2rem; }
+        h2 { font-family:'Orbitron'; color: var(--case-blue); font-size: 1.4rem; margin-top: 40px; }
+        
+        .tech-img {
+            width: 100%;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+        }
     </style>
 </head>
 <body>
-    <header><a href="index.html" class="brand" style="color:#fff;">ARF <span style="color:var(--case-blue);">İLERİ TEKNOLOJİ</span></a></header>
+
+    <div class="v-container">
+        <video autoplay muted loop playsinline id="bgVideo">
+            <source src="background.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="v-overlay"></div>
+
+    <header>
+        <a href="index.html" class="brand" style="color:#fff;">ARF <span style="color:var(--case-blue);">İLERİ TEKNOLOJİ</span></a>
+    </header>
+
     <div class="article-wrapper">
-        <span class="tag-case">CASE STUDY: THERMAL MANAGEMENT</span>
-        <h1 style="font-family:'Orbitron'; color:white; margin:20px 0;">İHA Güç Sistemlerinde Termal Darboğazın Aşılması</h1>
+        <a href="yazilar.html" class="back-btn"><i class="fas fa-arrow-left"></i> TÜM YAZILAR</a>
+        
+        <div style="margin-top: 10px;">
+            <span class="tag-case">CASE STUDY: THERMAL MANAGEMENT</span>
+            <h1>İHA Güç Sistemlerinde Termal Darboğazın Aşılması</h1>
+        </div>
         
         <h2>1. Problem Tanımı</h2>
-        <p>Müşterimiz tarafından geliştirilen Taktik İHA projesinde, 500W'lık DC-DC dönüştürücü birimi +70°C dış ortam sıcaklığında çalışırken 10 dakika içinde "Thermal Shutdown" moduna geçmekteydi.</p>
+        <p>
+            Müşterimiz tarafından geliştirilen Taktik İHA projesinde, 500W'lık DC-DC dönüştürücü birimi +70°C dış ortam sıcaklığında (MIL-STD-810H High Temp) çalışırken 10 dakika içinde "Thermal Shutdown" moduna geçmekteydi. Mevcut pasif soğutma çözümleri ağırlık limitleri nedeniyle yetersiz kalıyordu.
+        </p>
 
         <table class="results-table">
             <tr>
-                <td><span class="result-val">-22°C</span> Junction Sıcaklık Düşüşü</td>
-                <td><span class="result-val">%96</span> Tam Yükte Verimlilik</td>
+                <td>
+                    <span class="result-val">-22°C</span>
+                    <span class="result-label">JUNCTION SICAKLIK DÜŞÜŞÜ</span>
+                </td>
+                <td>
+                    <span class="result-val">%96</span>
+                    <span class="result-label">TAM YÜKTE VERİMLİLİK</span>
+                </td>
             </tr>
         </table>
 
         <h2>2. Analiz ve Çözüm</h2>
-        <p>Yapılan termal kamera incelemelerinde, ısının soğutucu bloğa aktarımı sırasında "Thermal Interface Material" (TIM) tabakasında boşluklar olduğu saptanmıştır. ARF mühendisleri, bu noktada faz değişimli (Phase Change) özel bir arayüz malzemesi ve optimize edilmiş kanat yapısına sahip yeni bir soğutucu blok tasarlamıştır.</p>
+        <p>
+            Laboratuvarımızda yapılan termal kamera incelemelerinde, ısının MOSFET kılıfından soğutucu bloğa aktarımı sırasında standart silikon pedlerin yüksek termal direnç oluşturduğu saptanmıştır.
+        </p>
+        <p>
+            <strong>ARF Mühendislik Müdahalesi:</strong>
+            <br>
+            1. Standart pedler yerine <strong>Phase Change Material (PCM)</strong> teknolojisine sahip, 5.0 W/m-K iletkenlikli arayüz malzemesi entegre edildi.
+            <br>
+            2. Soğutucu blok kanatçık yapısı, İHA'nın pervane hava akış yönüne (Airflow Optimization) göre CFD simülasyonlarıyla yeniden tasarlandı.
+        </p>
 
-        <img src="images/thermal-case-study.jpg" alt="Termal Analiz Sonuçları" style="width:100%; border-radius:8px; margin:20px 0;">
+        <img src="images/thermal-case-study.jpg" alt="Termal Analiz Sonuçları - Öncesi ve Sonrası" class="tech-img">
+        <p style="text-align: center; font-size: 0.8rem; color: #888; font-family: 'Share Tech Mono';">ŞEKİL 1: Termal Kamera Görüntüleri - Optimize Edilmiş Isı Yayılımı</p>
 
         <h2>3. Sonuç</h2>
-        <p>Yeni tasarım ile sistem +70°C'de kesintisiz 4 saat boyunca tam yükte çalıştırılmış ve kritik bileşen sıcaklıkları güvenli bölgede (max 95°C) tutulmuştur.</p>
+        <p>
+            Yeni tasarım ile sistem +70°C ortam sıcaklığında kesintisiz 4 saat boyunca tam yükte çalıştırılmış ve kritik bileşen sıcaklıkları güvenli bölgede (max 95°C) tutulmuştur. Proje, ağırlık artışı olmadan termal hedeflere ulaşmıştır.
+        </p>
     </div>
+
 </body>
 </html>
