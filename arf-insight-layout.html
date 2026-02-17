@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB Layout Stratejileri | ARF Insight</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-red: #e30a17; --deep-black: #050505; }
+        body { background-color: var(--deep-black); color: #e0e0e0; font-family: 'Montserrat', sans-serif; margin: 0; line-height: 1.8; }
+        .v-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
+        #bgVideo { width: 100vw; height: 100vh; object-fit: cover; filter: brightness(0.15); }
+        .v-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.9) 100%); z-index: -1; }
+        header { position: fixed; top: 0; width: 100%; background-color: rgba(5, 5, 5, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--primary-red); z-index: 1000; padding: 15px 0; text-align: center; }
+        header .brand { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; letter-spacing: 4px; color: #fff; text-decoration: none; }
+        header .brand span { color: var(--primary-red); }
+        .article-wrapper { padding: 140px 20px 80px; max-width: 850px; margin: 0 auto; }
+        .tag-insight { background: var(--primary-red); color: white; padding: 5px 15px; font-family: 'Orbitron'; font-size: 0.8rem; letter-spacing: 2px; }
+        .article-title { font-family: 'Orbitron', sans-serif; font-size: 2rem; color: white; margin: 20px 0; }
+        .design-rule-box { background: rgba(227, 10, 23, 0.05); border: 1px dashed var(--primary-red); padding: 25px; margin: 30px 0; border-radius: 4px; }
+        .rule-header { font-family: 'Orbitron'; color: var(--primary-red); font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .tech-img { width: 100%; border: 1px solid rgba(255,255,255,0.1); margin: 30px 0; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="v-container"><video autoplay muted loop playsinline id="bgVideo"><source src="background.mp4" type="video/mp4"></video></div>
+    <div class="v-overlay"></div>
+    <header><a href="index.html" class="brand">ARF <span>İLERİ TEKNOLOJİ</span></a></header>
+    <div class="article-wrapper">
+        <a href="yazilar.html" style="color:#888; text-decoration:none; font-family:'Orbitron'; font-size:0.8rem;"><i class="fas fa-arrow-left"></i> GERİ</a>
+        <div style="margin-top:30px;">
+            <span class="tag-insight">ARF INSIGHT</span>
+            <h1 class="article-title">Yüksek Hızlı GaN Tasarımlarında PCB Layout Stratejileri</h1>
+        </div>
+        <p>Galyum Nitrat (GaN) tabanlı güç dönüştürücülerde anahtarlama hızları ns (nanosaniye) mertebesindedir. Bu hızlarda, PCB üzerindeki 1 mm'lik bir yol bile devasa bir parazitik endüktansa dönüşebilir.</p>
+        
+        <div class="design-rule-box">
+            <span class="rule-header">ARF DESIGN RULE #01</span>
+            <strong>Gate Drive Loop Minimizasyonu:</strong> Gate sürücü sinyali ile güç kaynağı dönüş yolu arasındaki döngü alanı (loop area) sıfıra yakın tutulmalıdır. Biz ARF olarak, "Vertical Loop" metodolojisini kullanarak bu alanı geleneksel tasarımlara göre %60 oranında daraltıyoruz.
+        </div>
+
+        <img src="images/pcb-layout-insight.jpg" alt="PCB Layout Analizi" class="tech-img">
+        
+        <h2>Katman Yapısı ve Shielding</h2>
+        <p>EMC performansını artırmak için sinyal katmanlarının hemen altında kesintisiz bir GND düzlemi (Ground Plane) bulundurmak şarttır. Yüksek dV/dt değişimlerinin olduğu bölgelerde "Keep-out" alanları oluşturarak kuplaj kapasitansını minimize ediyoruz.</p>
+    </div>
+</body>
+</html>
