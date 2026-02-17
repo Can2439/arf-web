@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İHA Güç Sistemi Termal Analiz | Case Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --case-blue: #00d4ff; --deep-black: #050505; }
+        body { background-color: var(--deep-black); color: #e0e0e0; font-family: 'Montserrat', sans-serif; margin: 0; line-height: 1.8; }
+        header { position: fixed; top: 0; width: 100%; background-color: rgba(5, 5, 5, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--case-blue); z-index: 1000; padding: 15px 0; text-align: center; }
+        header .brand { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; letter-spacing: 4px; color: #fff; text-decoration: none; }
+        .article-wrapper { padding: 140px 20px 80px; max-width: 850px; margin: 0 auto; }
+        .tag-case { border: 1px solid var(--case-blue); color: var(--case-blue); padding: 5px 15px; font-family: 'Orbitron'; font-size: 0.8rem; }
+        .results-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: rgba(255,255,255,0.02); }
+        .results-table td { border: 1px solid rgba(0, 212, 255, 0.2); padding: 20px; text-align: center; }
+        .result-val { display: block; font-size: 2rem; color: var(--case-blue); font-weight: bold; font-family: 'Orbitron'; }
+    </style>
+</head>
+<body>
+    <header><a href="index.html" class="brand" style="color:#fff;">ARF <span style="color:var(--case-blue);">İLERİ TEKNOLOJİ</span></a></header>
+    <div class="article-wrapper">
+        <span class="tag-case">CASE STUDY: THERMAL MANAGEMENT</span>
+        <h1 style="font-family:'Orbitron'; color:white; margin:20px 0;">İHA Güç Sistemlerinde Termal Darboğazın Aşılması</h1>
+        
+        <h2>1. Problem Tanımı</h2>
+        <p>Müşterimiz tarafından geliştirilen Taktik İHA projesinde, 500W'lık DC-DC dönüştürücü birimi +70°C dış ortam sıcaklığında çalışırken 10 dakika içinde "Thermal Shutdown" moduna geçmekteydi.</p>
+
+        <table class="results-table">
+            <tr>
+                <td><span class="result-val">-22°C</span> Junction Sıcaklık Düşüşü</td>
+                <td><span class="result-val">%96</span> Tam Yükte Verimlilik</td>
+            </tr>
+        </table>
+
+        <h2>2. Analiz ve Çözüm</h2>
+        <p>Yapılan termal kamera incelemelerinde, ısının soğutucu bloğa aktarımı sırasında "Thermal Interface Material" (TIM) tabakasında boşluklar olduğu saptanmıştır. ARF mühendisleri, bu noktada faz değişimli (Phase Change) özel bir arayüz malzemesi ve optimize edilmiş kanat yapısına sahip yeni bir soğutucu blok tasarlamıştır.</p>
+
+        <img src="images/thermal-case-study.jpg" alt="Termal Analiz Sonuçları" style="width:100%; border-radius:8px; margin:20px 0;">
+
+        <h2>3. Sonuç</h2>
+        <p>Yeni tasarım ile sistem +70°C'de kesintisiz 4 saat boyunca tam yükte çalıştırılmış ve kritik bileşen sıcaklıkları güvenli bölgede (max 95°C) tutulmuştur.</p>
+    </div>
+</body>
+</html>
