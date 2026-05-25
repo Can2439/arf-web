@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>ARF CRM | Güvenli Giriş</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 flex items-center justify-center h-screen">
+    <div class="bg-slate-900 p-8 rounded-2xl shadow-2xl w-96 border border-slate-800">
+        <h1 class="text-2xl font-black text-blue-500 mb-6 text-center tracking-widest">ARF TEKNOLOJİ</h1>
+        <p class="text-slate-400 text-xs mb-6 text-center">Yönetim paneline erişmek için lütfen kimliğinizi doğrulayın.</p>
+        
+        <input type="password" id="pass" placeholder="Yönetici Şifresi" class="w-full p-3 bg-slate-800 border border-slate-700 rounded mb-4 text-white">
+        <button onclick="checkLogin()" class="w-full bg-blue-600 p-3 rounded font-bold text-white hover:bg-blue-500 transition">SİSTEME GİR</button>
+    </div>
+
+    <script>
+        function checkLogin() {
+            const pass = document.getElementById('pass').value;
+            // Buraya ARF için belirlediğin gizli şifreyi yaz
+            if (pass === "ARF2026") {
+                sessionStorage.setItem("isAuth", "true");
+                window.location.href = "index.html";
+            } else {
+                alert("Hatalı Giriş!");
+            }
+        }
+    </script>
+</body>
+</html>
