@@ -1,30 +1,17 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <title>ARF CRM | Güvenli Giriş</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-950 flex items-center justify-center h-screen">
-    <div class="bg-slate-900 p-8 rounded-2xl shadow-2xl w-96 border border-slate-800">
-        <h1 class="text-2xl font-black text-blue-500 mb-6 text-center tracking-widest">ARF TEKNOLOJİ</h1>
-        <p class="text-slate-400 text-xs mb-6 text-center">Yönetim paneline erişmek için lütfen kimliğinizi doğrulayın.</p>
-        
-        <input type="password" id="pass" placeholder="Yönetici Şifresi" class="w-full p-3 bg-slate-800 border border-slate-700 rounded mb-4 text-white">
-        <button onclick="checkLogin()" class="w-full bg-blue-600 p-3 rounded font-bold text-white hover:bg-blue-500 transition">SİSTEME GİR</button>
+<div class="h-screen bg-slate-950 flex items-center justify-center">
+    <div class="bg-slate-900 border border-slate-800 p-10 rounded-xl shadow-2xl">
+        <h2 class="text-white text-xl font-bold mb-6">ARF Kurumsal Portal</h2>
+        <input type="password" id="pass" class="w-full p-3 bg-slate-800 text-white rounded mb-4" placeholder="Yetkili Şifresi">
+        <button onclick="login()" class="w-full bg-blue-600 text-white p-3 rounded font-bold hover:bg-blue-500 transition">GİRİŞ</button>
     </div>
-
-    <script>
-        function checkLogin() {
-            const pass = document.getElementById('pass').value;
-            // Buraya ARF için belirlediğin gizli şifreyi yaz
-            if (pass === "ARF2026") {
-                sessionStorage.setItem("isAuth", "true");
-                window.location.href = "index.html";
-            } else {
-                alert("Hatalı Giriş!");
-            }
+</div>
+<script>
+    function login() {
+        if(document.getElementById('pass').value === "ARF2026") {
+            sessionStorage.setItem("logged_in", "true");
+            window.location.href = "/crm/index.html"; // CRM'in yüklü olduğu klasör
+        } else {
+            alert("Yetkisiz Giriş Denemesi!");
         }
-    </script>
-</body>
-</html>
+    }
+</script>
