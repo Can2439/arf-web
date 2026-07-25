@@ -24,7 +24,7 @@ araştırma ufku olarak konumlandırılır.
 - Ürün özellikleri ana kurumsal anlatının merkezine alınmaz.
 - Teknik notlar birincil kaynaklara dayanır ve neyi kanıtlamadığını açıklar.
 - Kavramsal hareketli görseller gerçek proje görüntüsü gibi sunulmaz.
-- SAYZEK üyeliği veya ekosistem ifadesi kullanılmaz.
+- Açıklanmamış program veya ekosistem ilişkileri anılmaz.
 
 ## Yapı
 
@@ -48,17 +48,19 @@ araştırma ufku olarak konumlandırılır.
 
 ## Geliştirme
 
-Site dış bağımlılık gerektirmeyen HTML, CSS ve JavaScript ile hazırlanmıştır.
+Site, statik HTML, CSS ve JavaScript ile hazırlanmıştır. Kullanılan yazı tipleri
+proje içinde barındırılır; ziyaretçi tarafında haricî arayüz bağımlılığı yoktur.
 Yerel olarak herhangi bir statik dosya sunucusuyla çalıştırılabilir.
 
 Kavramsal video varlıklarını yeniden üretmek için:
 
 ```bash
-python3 tools/generate-concept-media.py
+python3 tools/generate-editorial-media.py
 ```
 
-Üretim betiği Pillow ve FFmpeg gerektirir; yayımlanan sitenin çalışması için bu
-araçlara ihtiyaç yoktur.
+Yeni görsel sistem; özgün enerji alanı görselleri ile 10 saniyelik, kesintisiz
+soyut hareket döngülerini kullanır. Üretim betiği Pillow ve FFmpeg gerektirir;
+yayımlanan sitenin çalışması için bu araçlara ihtiyaç yoktur.
 
 ## Yayın
 

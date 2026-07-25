@@ -25,7 +25,7 @@ if (menuButton && navigation) {
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 900) closeMenu();
+    if (window.innerWidth > 980) closeMenu();
   });
 
   document.addEventListener("keydown", (event) => {
