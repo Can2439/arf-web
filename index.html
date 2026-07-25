@@ -1,246 +1,402 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARF İleri Teknoloji | Power Electronics & AI</title>
-    <meta name="description" content="ARF İleri Teknoloji - Savunma ve havacılık sanayii için yüksek performanslı güç elektroniği çözümleri, GaN/SiC tabanlı dönüştürücüler ve termal yönetim sistemleri.">
-    <meta name="keywords" content="ARF İleri Teknoloji, Güç Elektroniği, Savunma Sanayii, GaN, SiC, PCB Tasarım, Termal Yönetim, Çorlu">
-    <meta name="author" content="Can Sever">
-    <meta property="og:title" content="ARF İleri Teknoloji | Güç Elektroniğinde Gelecek">
-    <meta property="og:description" content="Savunma sanayii standartlarında (MIL-STD) donanım tasarımı ve ileri güç elektroniği çözümleri.">
-    <meta property="og:image" content="https://arftech.tr/images/sic-thermal-map.jpg"> 
-    <meta property="og:url" content="https://arftech.tr">
-    <link rel="icon" type="image/png" href="favicon.PNG">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-red: #e30a17;
-            --deep-black: #050505;
-            --navbar-bg: rgba(5, 5, 5, 0.85);
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARF İleri Teknoloji | Temel Teknolojiler ve Fikrî Değer</title>
+    <meta
+      name="description"
+      content="ARF İleri Teknoloji; enerji alanından başlayarak araştırma, fikrî mülkiyet ve teknoloji transferi odağında yapılandırılan bir teknoloji girişimidir."
+    >
+    <link rel="canonical" href="https://arftech.tr/">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta name="theme-color" content="#f4f7f4">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="ARF İleri Teknoloji">
+    <meta property="og:title" content="Enerji ve bilginin geleceği için temel teknolojiler">
+    <meta
+      property="og:description"
+      content="Araştırmadan fikrî değere, fikrî değerden sürdürülebilir teknoloji yapılarına."
+    >
+    <meta property="og:url" content="https://arftech.tr/">
+    <meta property="og:image" content="https://arftech.tr/assets/media/energy-horizon-poster.webp">
+    <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ARF İleri Teknoloji",
+        "url": "https://arftech.tr/",
+        "logo": "https://arftech.tr/assets/brand/arf-logo.png",
+        "description": "Enerji alanından başlayarak araştırma, fikrî mülkiyet ve teknoloji transferi odağında yapılandırılan teknoloji girişimi.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Pendik",
+          "addressRegion": "İstanbul",
+          "addressCountry": "TR"
         }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
 
-        html { scroll-behavior: smooth; }
-
-        body {
-            background-color: var(--deep-black);
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* ⚠️ VİDEO ARKA PLAN AYARLARI */
-        .v-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2; /* En arkaya itiyoruz */
-        }
-
-        #bgVideo {
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover; /* Videoyu ekranı kaplayacak şekilde esnetir/keser */
-            filter: brightness(0.4); /* Yazıların okunması için videoyu karartır */
-        }
-
-        /* Video üzerine hafif bir doku/maske */
-        .v-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: -1;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: var(--navbar-bg);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(227, 10, 23, 0.2);
-            z-index: 1000;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        header .brand {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 4px;
-            color: #fff;
-            text-decoration: none;
-        }
-        header .brand span { color: var(--primary-red); }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            letter-spacing: 10px;
-            margin: 0;
-            text-transform: uppercase;
-            background: linear-gradient(to bottom, #fff 40%, #888 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .slogan {
-            color: var(--primary-red);
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 5px;
-            font-weight: 400;
-            margin-top: 10px;
-            margin-bottom: 40px;
-        }
-
-        section {
-            padding: 120px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            background: rgba(5, 5, 5, 0.7); /* İçerik okunması için yarı saydam arka plan */
-            backdrop-filter: blur(5px);
-            border-radius: 10px;
-            margin-bottom: 50px;
-        }
-
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-        .section-title::before, .section-title::after {
-            content: ""; width: 50px; height: 1px; background: var(--primary-red);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
-
-        .card i { font-size: 2.5rem; color: var(--primary-red); margin-bottom: 20px; }
-
-        .btn {
-            padding: 15px 35px;
-            text-decoration: none;
-            font-weight: 600;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            transition: 0.3s;
-            display: inline-block;
-            margin: 10px;
-        }
-        .btn-primary { background: var(--primary-red); color: white; }
-        .btn-outline { border: 1px solid #444; color: #fff; }
-
-        .footer {
-            padding: 80px 20px;
-            background-color: rgba(3, 3, 3, 0.9);
-            text-align: center;
-            position: relative;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; letter-spacing: 5px; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="v-container">
-        <video autoplay muted loop playsinline id="bgVideo">
-            <source src="background.mp4" type="video/mp4">
-            </video>
-    </div>
-    <div class="v-overlay"></div>
-
-    <header>
-        <a href="#" class="brand">ARF <span>İLERİ TEKNOLOJİ</span></a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="ARF İleri Teknoloji ana sayfa">
+          <img src="assets/brand/arf-logo.png" width="1200" height="260" alt="ARF İleri Teknoloji">
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Menüyü aç</span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Ana menü">
+          <a href="kurumsal.html">ARF</a>
+          <a href="teknoloji-alanlari.html">Teknoloji Alanları</a>
+          <a href="arastirma-ip.html">Araştırma ve IP</a>
+          <a href="yazilar.html">Çalışmalar</a>
+          <a class="nav-cta" href="#iletisim">İletişim</a>
+        </nav>
+      </div>
     </header>
 
-    <div class="hero">
-    <h1>ARF İLERİ TEKNOLOJİ</h1>
-    <p class="slogan">POWERING THE FUTURE</p>
-    <div class="cta-group">
-        <a href="#about" class="btn btn-outline">MİSYONUMUZ</a>
-        <a href="yazilar.html" class="btn btn-outline" style="border-color: var(--primary-red);">TEKNİK YAZILAR</a>
-        <a href="mailto:info@arftech.tr" class="btn btn-primary">İLETİŞİM</a>
-    </div>
-</div>
-    
-    <section id="about">
-        <div class="section-title">TEKNOLOJİK ODAK</div>
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-bolt"></i>
-                <h3>Güç Elektroniği</h3>
-                <p>SiC/GaN tabanlı, yüksek verimli güç dönüşüm sistemleri ile savunma platformlarına güç veriyoruz.</p>
+    <main id="main">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy" data-reveal>
+            <span class="status-chip">Kuruluş hazırlığında</span>
+            <span class="eyebrow">Temel teknoloji yapılanması</span>
+            <h1>Enerji ve bilginin geleceği için <em>temel teknolojiler.</em></h1>
+            <p class="hero-lead">
+              ARF İleri Teknoloji; enerji alanından başlayarak araştırma, fikrî mülkiyet ve
+              teknoloji transferi odağında yapılandırılan bir teknoloji girişimidir.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#yaklasim">
+                Yaklaşımımız <span class="arrow" aria-hidden="true">→</span>
+              </a>
+              <a class="button button-secondary" href="#odaklar">Teknoloji alanları</a>
             </div>
-            <div class="card">
-                <i class="fas fa-brain"></i>
-                <h3>Edge AI</h3>
-                <p>Yapay zeka algoritmalarının donanım seviyesinde entegrasyonu ile akıllı enerji yönetimi.</p>
+          </div>
+
+          <div data-reveal>
+            <div class="motion-frame" data-motion-frame>
+              <video
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                poster="assets/media/energy-horizon-poster.webp"
+                aria-hidden="true"
+              >
+                <source src="assets/media/energy-horizon.mp4" type="video/mp4">
+              </video>
+              <div class="motion-meta">
+                <span class="concept-label">Kavramsal görselleştirme</span>
+                <button class="motion-toggle" type="button" aria-pressed="false">Hareketi durdur</button>
+              </div>
             </div>
-            <div class="card">
-                <i class="fas fa-shield-halved"></i>
-                <h3>Savunma Standartları</h3>
-                <p>MIL-STD uyumlu, zorlu çevresel koşullara dayanıklı kritik sistem tasarımları.</p>
+            <div class="hero-note">
+              <div>
+                <strong>Bugünkü odak</strong>
+                <span>Enerji teknolojileri</span>
+              </div>
+              <div>
+                <strong>Gelecek ufku</strong>
+                <span>Bilgi teknolojileri</span>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <div class="footer">
-        <p><i class="fas fa-building" style="color: var(--primary-red)"></i> <strong>TEKNOPARK İSTANBUL</strong></p>
-        <p>Pendik, İstanbul / Türkiye</p>
-        <p style="color: var(--primary-red); font-weight: bold; margin-top: 30px;">SAYZEK EKOSİSTEM ÜYESİ</p>
-        <p>&copy; 2026 ARF İLERİ TEKNOLOJİ</p>
-        <div style="margin-top: 20px;">
-    <a href="https://www.linkedin.com/company/arf-i%CC%87leri-teknoloji" target="_blank" style="color: #666; transition: 0.3s;">
-        <i class="fab fa-linkedin fa-2x"></i>
-    </a>
-    </div>
-    </div>
+      <section class="section section-white" id="yaklasim">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <div>
+              <span class="kicker">ARF’nin konumu</span>
+              <h2>Ürünün öncesindeki temel katman.</h2>
+            </div>
+            <p>
+              ARF; tek bir ürün kataloğu oluşturmak yerine, farklı ürün ve girişimlerin
+              üzerinde yükselebileceği teknoloji birikimini kurmayı hedefler.
+            </p>
+          </div>
 
-</body>
+          <div class="card-grid">
+            <article class="card" data-reveal>
+              <span class="card-index">01</span>
+              <h3>Araştırma</h3>
+              <p>
+                Enerji sistemlerindeki temel problemleri bilimsel yöntem, deneysel doğrulama
+                ve sistem bakışıyla ele almak.
+              </p>
+            </article>
+            <article class="card card-red" data-reveal>
+              <span class="card-index">02</span>
+              <h3>Fikrî değer</h3>
+              <p>
+                Oluşan bilgi birikimini korunabilir, aktarılabilir ve lisanslanabilir teknoloji
+                varlıklarına dönüştürmek.
+              </p>
+            </article>
+            <article class="card card-blue" data-reveal>
+              <span class="card-index">03</span>
+              <h3>Ticarileşme zemini</h3>
+              <p>
+                Ürünleşme ve müşteri entegrasyonunu gelecekte kurulacak alt marka veya
+                şirketler için güçlü bir temele oturtmak.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
+      <section class="section" id="odaklar">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <div>
+              <span class="kicker">Bugünkü araştırma odağı</span>
+              <h2>Enerjide iki mihenk taşı.</h2>
+            </div>
+            <p>
+              Birbirini tamamlayan iki eksen; enerjinin nasıl yönetildiğini ve nasıl elde
+              edildiğini aynı sistem bütünlüğü içinde ele alır.
+            </p>
+          </div>
+
+          <div class="focus-grid">
+            <article class="focus-card" data-reveal>
+              <div class="focus-content">
+                <span class="eyebrow">Birinci eksen</span>
+                <h3>Enerji Yönetimi ve Korunumu</h3>
+                <p>
+                  Enerjinin güvenli, verimli ve sürdürülebilir biçimde dönüştürülmesi,
+                  yönlendirilmesi ve korunmasına yönelik temel teknoloji yaklaşımı.
+                </p>
+                <ul class="topic-list">
+                  <li>Sistem verimliliği ve kayıp yönetimi</li>
+                  <li>Güvenli çalışma ve dayanıklılık</li>
+                  <li>Algılama, kontrol ve durum farkındalığı</li>
+                </ul>
+              </div>
+              <span class="number" aria-hidden="true">01</span>
+            </article>
+
+            <article class="focus-card" data-reveal>
+              <div class="focus-content">
+                <span class="eyebrow">İkinci eksen</span>
+                <h3>Enerji Üretimi ve Hasadı</h3>
+                <p>
+                  Farklı kaynaklardan elde edilen enerjinin yakalanması, uygunlaştırılması ve
+                  kullanılabilir bir sistem girdisine dönüştürülmesine yönelik araştırmalar.
+                </p>
+                <ul class="topic-list">
+                  <li>Dağıtık ve çevresel enerji kaynakları</li>
+                  <li>Enerji toplama ve uygunlaştırma</li>
+                  <li>Kaynak ile kullanım arasındaki bütünleşme</li>
+                </ul>
+              </div>
+              <span class="number" aria-hidden="true">02</span>
+            </article>
+          </div>
+
+          <div class="future-panel" data-reveal>
+            <div class="future-symbol" aria-hidden="true">→</div>
+            <div>
+              <span class="kicker">Gelecek araştırma ufku</span>
+              <h3>Enerjiden bilgiye</h3>
+              <p>
+                Enerji alanında kurulan sistem yaklaşımının, ilerleyen dönemde bilginin
+                üretilmesi, yönetilmesi ve korunmasına yönelik temel teknolojilere taşınması
+                hedeflenmektedir. Bu alan henüz aktif faaliyet olarak sunulmamaktadır.
+              </p>
+            </div>
+          </div>
+
+          <div class="button-row mt-34">
+            <a class="button button-secondary" href="teknoloji-alanlari.html">
+              Teknoloji alanlarını incele <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-ink">
+        <div class="container architecture">
+          <div class="architecture-intro" data-reveal>
+            <span class="kicker">Değer oluşturma modeli</span>
+            <h2>Araştırmadan etkiye.</h2>
+            <p>
+              ARF’nin görevi, bilginin doğduğu yer ile pazarda değer oluşturduğu yer arasında
+              düzenli ve güvenilir bir teknoloji hattı kurmaktır.
+            </p>
+          </div>
+
+          <div class="architecture-list">
+            <article class="architecture-item" data-reveal>
+              <span>01</span>
+              <div>
+                <h3>Temel araştırma</h3>
+                <p>Problem alanının, yöntemlerin ve teknik varsayımların oluşturulması.</p>
+              </div>
+            </article>
+            <article class="architecture-item" data-reveal>
+              <span>02</span>
+              <div>
+                <h3>Doğrulama ve bilgi birikimi</h3>
+                <p>Deneysel çalışmalarla tekrarlanabilir mühendislik bilgisinin kurulması.</p>
+              </div>
+            </article>
+            <article class="architecture-item" data-reveal>
+              <span>03</span>
+              <div>
+                <h3>Fikrî mülkiyet</h3>
+                <p>Uygun çıktıların korunabilir ve lisanslanabilir varlıklara dönüştürülmesi.</p>
+              </div>
+            </article>
+            <article class="architecture-item" data-reveal>
+              <span>04</span>
+              <div>
+                <h3>Alt yapı ve ticarileşme</h3>
+                <p>Ürünleşmenin ve müşteri entegrasyonunun ayrı marka veya şirketlerde yürütülmesi.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <div>
+              <span class="kicker">İki dünya arasında</span>
+              <h2>Akademik derinlik, endüstriyel etki.</h2>
+            </div>
+            <p>
+              Kuruluş aşamasındaki ARF, bugünden var olmayan iş birliklerini sıralamak yerine,
+              iş birliğinin hangi ilkelere dayanacağını açıkça tanımlar.
+            </p>
+          </div>
+
+          <div class="bridge" data-reveal>
+            <article class="bridge-panel">
+              <small>Akademi</small>
+              <h3>Bilginin niteliği</h3>
+              <p>
+                Kaynaklı araştırma, açık problem tanımı, tekrarlanabilir yöntem ve eleştirel
+                teknik değerlendirme.
+              </p>
+              <ul>
+                <li>Araştırma soruları ve teknik notlar</li>
+                <li>Bilimsel kaynaklarla kurulan düşünce zemini</li>
+                <li>Uzun vadeli bilgi ve yetkinlik oluşumu</li>
+              </ul>
+            </article>
+            <article class="bridge-panel">
+              <small>Endüstri</small>
+              <h3>Bilginin karşılığı</h3>
+              <p>
+                Araştırma çıktılarının güvenilir, aktarılabilir ve ölçeklenebilir teknoloji
+                yapılarına dönüşmesi.
+              </p>
+              <ul>
+                <li>Ortak geliştirmeye hazır teknoloji çekirdekleri</li>
+                <li>Lisanslama ve teknoloji transferi yaklaşımı</li>
+                <li>Gelecekteki alt yapılara ürünleşme zemini</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white">
+        <div class="container">
+          <div class="section-heading" data-reveal>
+            <div>
+              <span class="kicker">Araştırma notları</span>
+              <h2>İddia değil, düşünce zemini.</h2>
+            </div>
+            <p>
+              Teknik içerikler ürün tanıtımı veya müşteri başarı hikâyesi değil; araştırma
+              yaklaşımını görünür kılan, kaynaklı mühendislik notlarıdır.
+            </p>
+          </div>
+
+          <div class="note-grid">
+            <a class="note-card" href="arf-insight-layout.html" data-reveal>
+              <span class="note-type">Mühendislik notu</span>
+              <h3>Yüksek hızlı anahtarlamada yerleşim bir sistem problemidir</h3>
+              <p>Parazitik etkiler, akım çevrimleri ve ölçüm disiplinine giriş.</p>
+              <span class="note-link">Notu oku →</span>
+            </a>
+            <a class="note-card" href="mil-std-810h.html" data-reveal>
+              <span class="note-type">Doğrulama yaklaşımı</span>
+              <h3>Çevresel testlerde bağlam ve uyarlama</h3>
+              <p>Standart adı kullanmanın ötesinde, görev profiline dayalı test mantığı.</p>
+              <span class="note-link">Notu oku →</span>
+            </a>
+            <a class="note-card" href="sic-termal-analiz.html" data-reveal>
+              <span class="note-type">Termal tasarım</span>
+              <h3>Isı yolunu erken aşamada kurmak</h3>
+              <p>Güç yoğunluğu, arayüzler ve sıcaklık ölçümünün birlikte değerlendirilmesi.</p>
+              <span class="note-link">Notu oku →</span>
+            </a>
+          </div>
+
+          <div class="button-row mt-34">
+            <a class="button button-secondary" href="yazilar.html">Tüm çalışmaları gör</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="iletisim">
+        <div class="container">
+          <div class="cta-band" data-reveal>
+            <span class="eyebrow eyebrow-light">İletişim</span>
+            <h2>Temel teknolojiler için uzun vadeli bir zemin kuruyoruz.</h2>
+            <p>
+              Araştırma diyaloğu, teknoloji geliştirme yaklaşımı veya ARF’nin kuruluş süreci
+              hakkında iletişime geçebilirsiniz.
+            </p>
+            <a class="button" href="mailto:info@arftech.tr">info@arftech.tr</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img class="footer-brand" src="assets/brand/arf-logo.png" width="1200" height="260" alt="ARF İleri Teknoloji">
+          <p class="footer-copy">
+            Enerji alanından başlayarak temel teknoloji, fikrî değer ve gelecek girişimlerin
+            altyapısını oluşturmayı hedefleyen teknoloji yapılanması.
+          </p>
+        </div>
+        <div class="footer-column">
+          <strong>Sayfalar</strong>
+          <a href="kurumsal.html">ARF</a>
+          <a href="teknoloji-alanlari.html">Teknoloji Alanları</a>
+          <a href="arastirma-ip.html">Araştırma ve IP</a>
+          <a href="yazilar.html">Çalışmalar</a>
+        </div>
+        <div class="footer-column">
+          <strong>İletişim</strong>
+          <a href="mailto:info@arftech.tr">info@arftech.tr</a>
+          <span>Pendik, İstanbul / Türkiye</span>
+          <span>Kuruluş hazırlığında</span>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span data-year>2026</span> ARF İleri Teknoloji</span>
+        <span>Araştırma · Fikrî değer · Teknoloji transferi</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
-
-
-
-
-
-

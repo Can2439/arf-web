@@ -1,118 +1,65 @@
-# ARF İleri Teknoloji - Kurumsal Web Arayüzü
+# ARF İleri Teknoloji — Kurumsal Web Sitesi
 
-Bu depo (repository), **ARF İleri Teknoloji**'nin resmi web sitesi kaynak kodlarını içerir. Site, savunma sanayii ve güç elektroniği odaklı, "Stealth Mode" ve "High-Tech" estetiğine sahip bir yapıda tasarlanmıştır.
+ARF İleri Teknoloji'nin GitHub Pages üzerinde yayımlanan kurumsal web sitesi.
 
-🔗 **Canlı Site:** [arftech.tr]()
+Canlı adres: [arftech.tr](https://arftech.tr/)
 
----
+## Konumlandırma
 
-## 📂 Proje Yapısı
+Site, ARF'yi kuruluş hazırlığındaki bir temel teknoloji ve fikrî mülkiyet
+yapılanması olarak anlatır.
 
-Web sitesi, bakım kolaylığı ve hız için yalın HTML/CSS yapısı üzerine kurulmuştur.
+İlk araştırma odağı iki eksenden oluşur:
+
+1. Enerji Yönetimi ve Korunumu
+2. Enerji Üretimi ve Hasadı
+
+Bilgi teknolojileri, enerji alanındaki birikimin ardından ele alınacak gelecek
+araştırma ufku olarak konumlandırılır.
+
+## İçerik ilkeleri
+
+- Kuruluş aşaması açıkça belirtilir.
+- Kamuya açıklanmamış patent, lisans, müşteri veya iş birliği iddiası kullanılmaz.
+- Ürün özellikleri ana kurumsal anlatının merkezine alınmaz.
+- Teknik notlar birincil kaynaklara dayanır ve neyi kanıtlamadığını açıklar.
+- Kavramsal hareketli görseller gerçek proje görüntüsü gibi sunulmaz.
+- SAYZEK üyeliği veya ekosistem ifadesi kullanılmaz.
+
+## Yapı
 
 ```text
-ARF-WEB/
-├── index.html                # Ana Sayfa (Landing Page)
-├── yazilar.html              # Teknik Yazılar Vitrini (Blog Hub)
-├── images/                   # Tüm görseller bu klasörde toplanır
-│   ├── emi-filter-comparison.jpg
-│   ├── sic-thermal-map.jpg
-│   └── ...
-├── gan-emi-analizi.html      # [IEEE Review] Makale Sayfası
-├── sic-termal-analiz.html    # [IEEE Review] Makale Sayfası
-├── mil-std-810h.html         # [Standart] Makale Sayfası
-├── guc-yogunlugu.html        # [Tech Briefing] Makale Sayfası
-├── arf-insight-layout.html   # [ARF Insight] Özel Konsept Sayfası
-├── case-study-thermal.html   # [Case Study] Vaka Analizi Sayfası
-├── background.mp4            # Arka plan videosu
-└── README.md                 # Proje Dokümantasyonu
-
+.
+├── index.html
+├── kurumsal.html
+├── teknoloji-alanlari.html
+├── arastirma-ip.html
+├── yazilar.html
+├── *-analiz.html / *-teknolojisi.html
+├── assets
+│   ├── brand
+│   └── media
+├── styles.css
+├── script.js
+├── robots.txt
+├── sitemap.xml
+└── CNAME
 ```
 
----
+## Geliştirme
 
-## 📝 Teknik İçerik Stratejisi ve Konseptler
+Site dış bağımlılık gerektirmeyen HTML, CSS ve JavaScript ile hazırlanmıştır.
+Yerel olarak herhangi bir statik dosya sunucusuyla çalıştırılabilir.
 
-Sitedeki teknik yazılar 4 ana kategoriye ayrılmıştır. Her kategorinin tasarım dili, renk kodu ve hitap ettiği kitle farklıdır.
+Kavramsal video varlıklarını yeniden üretmek için:
 
-### 1. IEEE Review (Akademik İnceleme)
+```bash
+python3 tools/generate-concept-media.py
+```
 
-* **Amaç:** Akademik literatürü takip ettiğimizi ve en son teknolojileri (State-of-the-Art) bildiğimizi göstermek.
-* **Format:** Makale Özeti + Görsel + **ARF Yorumu**.
-* **Renk Kodu:** <span style="color:red">**Kırmızı Etiket**</span> (`background: #e30a17`)
-* **İçerik:** IEEE Xplore makalelerinin savunma sanayii perspektifiyle yorumlanması.
-* **Örnek Dosya:** `gan-emi-analizi.html`
+Üretim betiği Pillow ve FFmpeg gerektirir; yayımlanan sitenin çalışması için bu
+araçlara ihtiyaç yoktur.
 
-### 2. Tech Briefing (Teknoloji Özeti)
+## Yayın
 
-* **Amaç:** Yatırımcılara ve yöneticilere sektörün geleceğini ve ARF'nin vizyonunu anlatmak.
-* **Format:** Trend Analizi + Pazar Vizyonu.
-* **Renk Kodu:** **Siyah/Beyaz Etiket** (`background: #fff; color: #000`)
-* **İçerik:** Minyatürizasyon, Güç Yoğunluğu gibi stratejik konular.
-* **Örnek Dosya:** `guc-yogunlugu.html`
-
-### 3. ARF Insight (Özgün Mühendislik)
-
-* **Amaç:** Şirketin kendi geliştirdiği tasarım metodolojilerini ve "Know-How"ını sergilemek.
-* **Format:** **Design Rules (Tasarım Kuralları)** kutuları içerir.
-* **Renk Kodu:** **Kırmızı Arka Plan / Vurgulu** (`background: rgba(227, 10, 23, 0.1)`)
-* **İçerik:** PCB Layout teknikleri, EMI shielding yöntemleri.
-* **Örnek Dosya:** `arf-insight-layout.html`
-
-### 4. Case Study (Vaka Analizi)
-
-* **Amaç:** Gerçekleşmiş bir projede çözülen problemi kanıtlamak.
-* **Format:** Problem -> Analiz -> Çözüm -> **Sonuç Tablosu**.
-* **Renk Kodu:** **Cyan/Mavi Tema** (`color: #00d4ff`)
-* **İçerik:** Termal darboğaz çözümleri, verimlilik artış hikayeleri.
-* **Örnek Dosya:** `case-study-thermal.html`
-
----
-
-## 🎨 Görsel Standartları (Assets Guidelines)
-
-Sitenin profesyonel görünümü için görsellerde aşağıdaki kurallara **kesinlikle** uyulmalıdır.
-
-### Teknik Özellikler
-
-* **Format:** `.jpg` (Optimize edilmiş).
-* **En/Boy Oranı:** **16:9** (Geniş Ekran).
-* **Çözünürlük:** Önerilen genişlik **1200px - 1920px**.
-* **Dosya Boyutu:** Sayfa hızı için görsel başına **maksimum 500KB**.
-
-### Tasarım Dili (Aesthetic)
-
-Görseller şu anahtar kelimelerle (Prompt Keywords) oluşturulmalıdır:
-
-* *Dark Mode, Schematic Overlay, Neon Red/Cyan Accents, Macro Photography, High-Tech, Engineering Aesthetic.*
-* Beyaz arka planlı, stok fotoğraf hissi veren görseller **kullanılmamalıdır.**
-
-### Dosya İsimlendirme Kuralları
-
-Dosya isimleri **küçük harf** olmalı, **Türkçe karakter içermemeli** ve kelimeler **tire (-)** ile ayrılmalıdır.
-
-* ✅ Doğru: `sic-thermal-map.jpg`
-* ❌ Yanlış: `SiC Termal Harita.JPG`
-
----
-
-## 🚀 Yeni Yazı Ekleme Adımları (Workflow)
-
-1. **Şablon Seç:** Yazının türüne uygun `.html` dosyasını (örn: `gan-emi-analizi.html`) kopyala ve yeni isimle kaydet.
-2. **İçeriği Gir:** Metinleri, başlıkları ve meta bilgilerini (Tarih, Yazar) güncelle.
-3. **Görsel Üret:** 16:9 formatında, konsept uyumlu görseli oluştur ve `images/` klasörüne yükle.
-4. **Bağlantı Yap:** `yazilar.html` dosyasını aç ve en üst sıraya yeni yazının kartını ekle.
-5. **Commit & Push:** Değişiklikleri GitHub'a gönder.
-
----
-
-## 🛠️ Kullanılan Teknolojiler
-
-* **HTML5 / CSS3:** Saf (Vanilla) kod yapısı.
-* **Fontlar:** Orbitron (Başlıklar), Montserrat (Metin), Share Tech Mono (Teknik Veriler).
-* **İkonlar:** FontAwesome 6.
-* **Hosting:** GitHub Pages.
-
----
-
-© 2026 ARF İleri Teknoloji | Tüm Hakları Saklıdır.
+`main` dalına birleştirilen değişiklikler GitHub Pages tarafından yayımlanır.

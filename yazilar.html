@@ -1,249 +1,185 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teknik Yazılar | ARF İleri Teknoloji</title>
-    <meta name="description" content="ARF İleri Teknoloji Teknik Kütüphanesi - Güç elektroniği, EMI filtre tasarımı, termal analizler ve IEEE makale incelemeleri.">
-    <meta name="keywords" content="Teknik Yazılar, IEEE Review, Mühendislik Blogu, Güç Elektroniği Makaleleri, ARF Tech">
-    <meta name="author" content="Can Sever">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary-red: #e30a17;
-            --deep-black: #050505;
-            --navbar-bg: rgba(5, 5, 5, 0.85);
-        }
-
-        body {
-            background-color: var(--deep-black);
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* Arka Plan Videosu Sabit Kalsın */
-        .v-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-        }
-
-        #bgVideo {
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            filter: brightness(0.3);
-        }
-
-        .v-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: -1;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: var(--navbar-bg);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(227, 10, 23, 0.2);
-            z-index: 1000;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        header .brand {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 4px;
-            color: #fff;
-            text-decoration: none;
-        }
-        header .brand span { color: var(--primary-red); }
-
-        .content-wrapper {
-            padding: 150px 20px 80px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .page-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 50px;
-            letter-spacing: 5px;
-        }
-
-        /* Yazı Kartları */
-        .blog-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-left: 4px solid var(--primary-red);
-            padding: 30px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            transition: 0.3s;
-            text-decoration: none;
-            color: white;
-            display: block;
-        }
-
-        .blog-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(227, 10, 23, 0.2);
-        }
-
-        .blog-date {
-            color: var(--primary-red);
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        /* IEEE Tag Stili */
-        .ieee-tag {
-            background-color: var(--primary-red);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 3px;
-            font-weight: bold;
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-        }
-
-        .blog-card h2 {
-            margin: 10px 0;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.4rem;
-        }
-        
-        .blog-card p {
-            color: #ccc;
-            font-size: 0.95rem;
-            margin-top: 10px;
-        }
-
-        .back-btn {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: #ccc;
-            text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        .back-btn:hover { color: var(--primary-red); }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            background: rgba(3, 3, 3, 0.9);
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        .footer-social a {
-            color: #888;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .footer-social a:hover {
-            color: var(--primary-red);
-        }
-    </style>
-</head>
-<body>
-
-    <div class="v-container">
-        <video autoplay muted loop playsinline id="bgVideo">
-            <source src="background.mp4" type="video/mp4">
-        </video>
-    </div>
-    <div class="v-overlay"></div>
-
-    <header>
-        <a href="index.html" class="brand">ARF <span>İLERİ TEKNOLOJİ</span></a>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Çalışmalar ve Araştırma Notları | ARF İleri Teknoloji</title>
+    <meta
+      name="description"
+      content="ARF İleri Teknoloji'nin enerji, güç elektroniği, termal tasarım, EMI ve çevresel doğrulama alanlarındaki kaynaklı mühendislik notları."
+    >
+    <link rel="canonical" href="https://arftech.tr/yazilar.html">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta name="theme-color" content="#f4f7f4">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:title" content="Çalışmalar | ARF İleri Teknoloji">
+    <meta property="og:description" content="Kaynaklı, ölçülü ve açık kapsamlı mühendislik notları.">
+    <meta property="og:url" content="https://arftech.tr/yazilar.html">
+    <meta property="og:image" content="https://arftech.tr/assets/media/energy-horizon-poster.webp">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="ARF İleri Teknoloji ana sayfa">
+          <img src="assets/brand/arf-logo.png" width="1200" height="260" alt="ARF İleri Teknoloji">
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span><span class="sr-only">Menüyü aç</span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Ana menü">
+          <a href="kurumsal.html">ARF</a>
+          <a href="teknoloji-alanlari.html">Teknoloji Alanları</a>
+          <a href="arastirma-ip.html">Araştırma ve IP</a>
+          <a href="yazilar.html" aria-current="page">Çalışmalar</a>
+          <a class="nav-cta" href="index.html#iletisim">İletişim</a>
+        </nav>
+      </div>
     </header>
 
-    <div class="content-wrapper">
-        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> ANA SAYFAYA DÖN</a>
-        
-        <h1 class="page-title">TEKNİK YAZILAR</h1>
-        
-
-        <a href="arf-insight-layout.html" class="blog-card" style="border-left: 4px solid #fff; background: rgba(227, 10, 23, 0.1);">
-            <div class="blog-date"><span class="ieee-tag" style="background: #fff; color: #e30a17;">ARF INSIGHT</span> 17 ŞUBAT 2026</div>
-            <h2>Yüksek Hızlı GaN Tasarımlarında PCB Layout Stratejileri</h2>
-            <p>Parazitik endüktansları minimize etmek ve anahtarlama performansını optimize etmek için uyguladığımız özel "ARF Design Rules" metodolojisi.</p>
-        </a>
-
-        <a href="case-study-thermal.html" class="blog-card" style="border-left: 4px solid #00d4ff;">
-            <div class="blog-date">
-            <span class="ieee-tag" style="background: #00d4ff; color: #000;">CASE STUDY</span> 17 ŞUBAT 2026</div>
-            <h2>İHA Güç Sistemlerinde Termal Yönetim: 500W DC-DC Başarı Hikayesi</h2>
-            <p>Sınırlı hacim ve yüksek ortam sıcaklığı koşullarında, termal darboğazın faz değişimli malzemeler (PCM) kullanılarak aşılma süreci.</p>
-        </a>
-
-        <a href="guc-yogunlugu.html" class="blog-card">
-            <div class="blog-date"><span class="ieee-tag" style="background: #fff; color: #000;">TECH BRIEFING</span> 17 ŞUBAT 2026</div>
-            <h2>Güç Elektroniğinde Minyatürizasyon: Güç Yoğunluğunu Artıran Tasarım Stratejileri</h2>
-            <p>Savunma sanayiinde yer ve ağırlık tasarrufu sağlayan, yüksek güç yoğunluğuna sahip dönüştürücü tasarımlarının geleceği.</p>
-        </a>
-        
-        <a href="sic-termal-analiz.html" class="blog-card">
-            <div class="blog-date"><span class="ieee-tag">IEEE REVIEW</span> 17 ŞUBAT 2026</div>
-            <h2>SiC MOSFET Tabanlı İnverterlerde Gelişmiş Termal Yönetim</h2>
-            <p>Yeni nesil Silicon Carbide güç modüllerinde ısı dağılımı optimizasyonu ve savunma sanayii uygulamaları için pasif soğutma stratejileri.</p>
-        </a>
-
-        <a href="gan-emi-analizi.html" class="blog-card">
-            <div class="blog-date"><span class="ieee-tag">IEEE REVIEW</span> 17 ŞUBAT 2026</div>
-            <h2>GaN Tabanlı Dönüştürücülerde EMI Gürültüsü ve Filtreleme Teknikleri</h2>
-            <p>Aktif EMI filtreleme tekniklerinin savunma sanayii ve MIL-STD-461 standartları perspektifiyle incelenmesi ve saha uygulamalarındaki zorluklar.</p>
-        </a>
-
-        <a href="mil-std-810h.html" class="blog-card">
-            <div class="blog-date">16 ŞUBAT 2026</div>
-            <h2>MIL-STD-810H Standartlarına Göre Donanım Tasarımı</h2>
-            <p>Zorlu çevresel koşullarda çalışacak askeri sınıf güç elektroniği sistemlerinin mekanik, termal ve titreşim dayanımı tasarım kriterleri.</p>
-        </a>
-
-        <a href="gan-teknolojisi.html" class="blog-card">
-            <div class="blog-date">15 ŞUBAT 2026</div>
-            <h2>GaN Teknolojisi ve Güç Elektroniğinde Verimlilik</h2>
-            <p>Galyum Nitrat (GaN) tabanlı geniş bant aralıklı (WBG) yarı iletkenlerin geleneksel silikon sistemlere göre avantajları ve güç yoğunluğuna etkileri.</p>
-        </a>
-
-    </div>
-
-    <footer>
-        <p style="color: #666; font-size: 0.9rem; margin-bottom: 15px;">&copy; 2026 ARF İLERİ TEKNOLOJİ</p>
-        <div class="footer-social">
-            <a href="https://www.linkedin.com/company/arf-ileri-teknoloji" target="_blank">
-                <i class="fab fa-linkedin fa-2x"></i>
-            </a>
+    <main id="main">
+      <section class="page-hero">
+        <div class="container page-hero-grid">
+          <div data-reveal>
+            <span class="eyebrow">Açık bilgi katmanı</span>
+            <h1>Çalışmalar ve araştırma notları.</h1>
+            <p class="lead">
+              ARF’nin teknik düşünce zeminini görünür kılan, kaynaklı ve kapsamı açıkça
+              sınırlandırılmış mühendislik değerlendirmeleri.
+            </p>
+          </div>
+          <aside class="page-marker" data-reveal>
+            <strong>Yayın ilkesi</strong>
+            <p>
+              Bu içerikler ürün tanıtımı, tamamlanmış müşteri projesi veya uygunluk beyanı
+              değildir. Araştırma yaklaşımını açıklayan teknik notlardır.
+            </p>
+          </aside>
         </div>
+      </section>
+
+      <section class="section section-white">
+        <div class="container">
+          <div class="disclosure" data-reveal>
+            <strong>Şeffaflık notu</strong>
+            <p>
+              ARF kuruluş hazırlığındadır. Bu sayfadaki yazılar kamuya açık teknik
+              kaynakların yorumlanmasına dayanır; patent, müşteri referansı veya tamamlanmış
+              ürün performansı iddiası içermez.
+            </p>
+          </div>
+
+          <div class="note-grid mt-34">
+            <a class="note-card" href="arf-insight-layout.html" data-reveal>
+              <span class="note-type">Mühendislik notu</span>
+              <h3>Yüksek hızlı anahtarlamada yerleşim stratejileri</h3>
+              <p>Akım çevrimleri, parazitik endüktans ve ölçüm disiplinine sistem yaklaşımı.</p>
+              <span class="note-link">Notu oku →</span>
+            </a>
+
+            <a class="note-card" href="gan-emi-analizi.html" data-reveal>
+              <span class="note-type">EMI yaklaşımı</span>
+              <h3>Kaynak, yol ve alıcı üzerinden EMI analizi</h3>
+              <p>Gürültüyü yalnız filtre problemi olarak görmeyen üç parçalı analiz çerçevesi.</p>
+              <span class="note-link">Notu oku →</span>
+            </a>
+
+            <a class="note-card" href="sic-termal-analiz.html" data-reveal>
+              <span class="note-type">Termal tasarım</span>
+              <h3>Isı yolunu erken aşamada kurmak</h3>
+              <p>Birleşim noktasından dış ortama uzanan termal yolun tasarım içindeki yeri.</p>
+              <span class="note-link">Notu oku →</span>
+            </a>
+
+            <a class="note-card" href="mil-std-810h.html" data-reveal>
+              <span class="note-type">Doğrulama yaklaşımı</span>
+              <h3>Çevresel testlerde bağlam ve uyarlama</h3>
+              <p>MIL-STD-810H dokümanını evrensel bir ürün etiketi değil, uyarlama süreci olarak okumak.</p>
+              <span class="note-link">Notu oku →</span>
+            </a>
+
+            <a class="note-card" href="guc-yogunlugu.html" data-reveal>
+              <span class="note-type">Sistem değerlendirmesi</span>
+              <h3>Güç yoğunluğu tek bir sayı değildir</h3>
+              <p>Elektriksel, termal, mekanik ve güvenilirlik hedefleri arasındaki denge.</p>
+              <span class="note-link">Notu oku →</span>
+            </a>
+
+            <a class="note-card" href="gan-teknolojisi.html" data-reveal>
+              <span class="note-type">Teknoloji seçimi</span>
+              <h3>GaN ne zaman doğru seçimdir?</h3>
+              <p>Malzeme üstünlüğünü sistem gereksinimleri ve uygulama bağlamıyla birlikte değerlendirmek.</p>
+              <span class="note-link">Notu oku →</span>
+            </a>
+
+            <a class="note-card" href="case-study-thermal.html" data-reveal>
+              <span class="note-type">Örnek çalışma çerçevesi</span>
+              <h3>Termal doğrulama planı nasıl kurulur?</h3>
+              <p>Gerçek müşteri vakası olmayan, yöntem odaklı bir doğrulama planı örneği.</p>
+              <span class="note-link">Notu oku →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container two-column">
+          <div data-reveal>
+            <span class="kicker">İçerik standardı</span>
+            <h2>Akademik dil ile endüstriyel okunabilirlik arasında.</h2>
+          </div>
+          <div class="content-stack" data-reveal>
+            <p class="lead">
+              Her not, teknik kaynağı gösterirken aynı zamanda mühendislik kararının sistem
+              düzeyindeki anlamını açıklar.
+            </p>
+            <div class="content-panel">
+              <h3>Kaynak</h3>
+              <p>Üretici uygulama notu, resmî standart kaydı veya birincil teknik doküman.</p>
+            </div>
+            <div class="content-panel">
+              <h3>Yorum</h3>
+              <p>Kaynağın ARF’nin araştırma alanları açısından ne ifade ettiğine dair ölçülü değerlendirme.</p>
+            </div>
+            <div class="content-panel">
+              <h3>Sınır</h3>
+              <p>İçeriğin neyi kanıtlamadığı ve hangi verilerin ayrıca doğrulanması gerektiği.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img class="footer-brand" src="assets/brand/arf-logo.png" width="1200" height="260" alt="ARF İleri Teknoloji">
+          <p class="footer-copy">
+            Enerji alanından başlayarak temel teknoloji, fikrî değer ve gelecek girişimlerin
+            altyapısını oluşturmayı hedefleyen teknoloji yapılanması.
+          </p>
+        </div>
+        <div class="footer-column">
+          <strong>Sayfalar</strong>
+          <a href="kurumsal.html">ARF</a>
+          <a href="teknoloji-alanlari.html">Teknoloji Alanları</a>
+          <a href="arastirma-ip.html">Araştırma ve IP</a>
+          <a href="yazilar.html">Çalışmalar</a>
+        </div>
+        <div class="footer-column">
+          <strong>İletişim</strong>
+          <a href="mailto:info@arftech.tr">info@arftech.tr</a>
+          <span>Pendik, İstanbul / Türkiye</span>
+          <span>Kuruluş hazırlığında</span>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span data-year>2026</span> ARF İleri Teknoloji</span>
+        <span>Araştırma · Fikrî değer · Teknoloji transferi</span>
+      </div>
     </footer>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
-
-
-
-

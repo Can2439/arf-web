@@ -1,79 +1,65 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIL-STD-810H Standartları | ARF İleri Teknoloji</title>
-    <meta name="description" content="Askeri standartlara (MIL-STD-810H) uygun donanım tasarımı rehberi. Titreşim, şok ve yüksek sıcaklık testlerine dayanıklı elektronik paketleme.">
-    <meta name="keywords" content="MIL-STD-810H, Askeri Standartlar, Dayanıklı Tasarım, Rugged Electronics, Çevresel Testler">
-    <meta name="author" content="Can Sever">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="favicon.PNG">
-    
-    <style>
-        :root { --primary-red: #e30a17; --deep-black: #050505; }
-        body { background-color: var(--deep-black); color: #ffffff; font-family: 'Montserrat', sans-serif; margin: 0; line-height: 1.8; }
-        
-        .v-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
-        #bgVideo { width: 100vw; height: 100vh; object-fit: cover; filter: brightness(0.2); }
-        .v-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: -1; }
-
-        header { position: fixed; top: 0; width: 100%; background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(227, 10, 23, 0.2); z-index: 1000; padding: 15px 0; text-align: center; }
-        header .brand { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; letter-spacing: 4px; color: #fff; text-decoration: none; }
-        header .brand span { color: var(--primary-red); }
-
-        .article-container { padding: 150px 20px 80px; max-width: 800px; margin: 0 auto; position: relative; }
-        .back-link { display: inline-block; margin-bottom: 30px; color: var(--primary-red); text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.8rem; }
-        
-        h1 { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; line-height: 1.3; margin-bottom: 20px; color: #fff; }
-        .meta { color: #888; font-family: 'Orbitron', sans-serif; font-size: 0.8rem; margin-bottom: 40px; border-bottom: 1px solid #333; padding-bottom: 20px; }
-        
-        .content h2 { font-family: 'Orbitron', sans-serif; color: var(--primary-red); font-size: 1.4rem; margin-top: 40px; }
-        .content p { font-size: 1.1rem; color: #ccc; margin-bottom: 25px; }
-        .highlight-box { background: rgba(227, 10, 23, 0.1); border-left: 4px solid var(--primary-red); padding: 20px; margin: 30px 0; font-style: italic; }
-        
-        ul { list-style: none; padding: 0; }
-        ul li { margin-bottom: 15px; padding-left: 30px; position: relative; }
-        ul li::before { content: "\f12e"; font-family: "Font Awesome 5 Free"; font-weight: 900; position: absolute; left: 0; color: var(--primary-red); }
-
-        footer { text-align: center; padding: 50px; background: rgba(3, 3, 3, 0.9); margin-top: 50px; }
-    </style>
-</head>
-<body>
-    <div class="v-container"><video autoplay muted loop playsinline id="bgVideo"><source src="background.mp4" type="video/mp4"></video></div>
-    <div class="v-overlay"></div>
-
-    <header><a href="index.html" class="brand">ARF <span>İLERİ TEKNOLOJİ</span></a></header>
-
-    <article class="article-container">
-        <a href="yazilar.html" class="back-link"><i class="fas fa-arrow-left"></i> TÜM YAZILARA DÖN</a>
-        
-        <h1>MIL-STD-810H: Donanım Tasarımında Operasyonel Dayanıklılık</h1>
-        <div class="meta">YAYINLANMA: 16 ŞUBAT 2026 | YAZAR: CAN SEVER</div>
-
-        <div class="content">
-            <p>Savunma sanayiinde bir donanımın başarısı, laboratuvar ortamındaki performansından ziyade sahadaki en uç koşullarda gösterdiği dirençle ölçülür. <strong>MIL-STD-810H</strong>, bir sistemin çevresel stres faktörlerine karşı tasarım limitlerini belirleyen küresel bir standarttır.</p>
-
-            <div class="highlight-box">
-                "Askeri standartlara uyumluluk, sadece bir sertifika değil; sistem güvenilirliğinin temel taşıdır."
-            </div>
-
-            <h2>Tasarım Sürecinde Çevresel Testler</h2>
-            <p>ARF İleri Teknoloji olarak, donanım tasarım süreçlerimizi henüz şematik aşamasındayken MIL-STD-810H kriterlerini gözeterek kurguluyoruz. Bu standart, donanımın ömür döngüsü boyunca karşılaşabileceği şu temel etkileri kapsar:</p>
-
-            <ul>
-                <li><strong>Sıcaklık Şoku:</strong> Ani sıcaklık değişimlerinde malzeme genleşmesi ve bileşen stresinin yönetimi.</li>
-                <li><strong>Mekanik Titreşim:</strong> Platformların (Kara, Hava, Deniz) titreşim profillerine göre PCB ve komponent dayanımı.</li>
-                <li><strong>Nem ve Korozyon:</strong> Tropikal veya deniz tipi ortamlarda PCB kaplama (conformal coating) stratejileri.</li>
-                <li><strong>Fonksiyonel Şok:</strong> Çarpışma veya ateşleme anındaki yüksek G kuvvetlerine karşı yapısal bütünlük.</li>
-            </ul>
-
-            <h2>Mühendislik Yaklaşımımız</h2>
-            <p>Güç elektroniği tasarımlarımızda, yüksek anahtarlama frekanslarının yarattığı ısıl yükü tahliye ederken, aynı zamanda MIL-STD uyumlu sızdırmazlık ve mekanik koruma sağlıyoruz. GaN tabanlı kompakt tasarımlarımızda, termal pad seçiminden gövde tasarımına kadar her detayda bu standartların izi bulunmaktadır.</p>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Çevresel Testlerde Bağlam ve Uyarlama | ARF Araştırma Notu</title>
+    <meta name="description" content="MIL-STD-810H dokümanını genel bir ürün etiketi değil, görev profiline göre uyarlanan çevresel doğrulama süreci olarak okumak.">
+    <link rel="canonical" href="https://arftech.tr/mil-std-810h.html">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta name="theme-color" content="#f4f7f4">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="ARF İleri Teknoloji ana sayfa"><img src="assets/brand/arf-logo.png" width="1200" height="260" alt="ARF İleri Teknoloji"></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Menüyü aç</span></button>
+        <nav class="site-nav" id="site-nav" aria-label="Ana menü">
+          <a href="kurumsal.html">ARF</a><a href="teknoloji-alanlari.html">Teknoloji Alanları</a><a href="arastirma-ip.html">Araştırma ve IP</a><a href="yazilar.html" aria-current="page">Çalışmalar</a><a class="nav-cta" href="index.html#iletisim">İletişim</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <header class="article-header">
+        <div class="container">
+          <div class="article-meta"><span>Doğrulama yaklaşımı</span><span>Çevresel test</span><span>5 dakika</span></div>
+          <h1>Çevresel doğrulama, standart adından önce görev profiliyle başlar.</h1>
+          <p class="lead">MIL-STD-810H, her ürüne aynı testlerin uygulandığı tek bir uygunluk reçetesi değildir; yaşam döngüsü koşullarına göre uyarlanan bir mühendislik sürecidir.</p>
         </div>
-    </article>
-
-    <footer><p>&copy; 2026 ARF İLERİ TEKNOLOJİ</p></footer>
-</body>
+      </header>
+      <div class="container article-shell">
+        <article class="article-body">
+          <p>Bir sistemin taşıma, depolama ve çalışma sırasında karşılaşacağı sıcaklık, titreşim, şok, nem veya kum-toz koşulları aynı değildir. Doğrulama planının amacı, gerçek kullanım çevresini anlamlı laboratuvar koşullarına dönüştürmektir.</p>
+          <h2>Uyarlama neden gereklidir?</h2>
+          <p>Test şiddeti, süre, sıra ve numune konfigürasyonu görev profilinden türetilir. Gereksiz ağır bir test gerçek dışı arızalara; yetersiz bir test ise sahadaki risklerin gözden kaçmasına neden olabilir.</p>
+          <ol>
+            <li>Yaşam döngüsü ve kullanım senaryolarını tanımlamak</li>
+            <li>İlgili çevresel etkileri ve beklenen seviyeleri belirlemek</li>
+            <li>Yöntemleri, prosedürleri ve test sırasını uyarlamak</li>
+            <li>Başarı ölçütlerini testten önce yazmak</li>
+            <li>Sonuçları görev riskiyle birlikte değerlendirmek</li>
+          </ol>
+          <h2>Tasarım ve test birbirinden ayrı değildir</h2>
+          <p>Çevresel koşullar; malzeme seçimini, bağlantıları, muhafazayı, termal yolu ve komponent gerilimlerini etkiler. Test planı projenin sonuna bırakıldığında düzeltmeler pahalı ve sınırlı olabilir.</p>
+          <div class="callout"><p><strong>ARF yaklaşımı:</strong> “Standarda uygun” gibi geniş bir etiket yerine, hangi yöntemin hangi konfigürasyon ve kabul ölçütüyle uygulandığını izlenebilir biçimde tanımlamak gerekir.</p></div>
+          <h2>Bu not neyi kanıtlamaz?</h2>
+          <p>ARF’nin bir ürününün MIL-STD-810H testinden geçtiği veya standarda uygun olduğu iddia edilmemektedir. İçerik, resmî dokümanın kapsamını doğru yorumlamaya yönelik araştırma notudur.</p>
+        </article>
+        <aside class="article-aside">
+          <div class="aside-card"><strong>Kapsam</strong><p>Görev profili, test uyarlama, kabul ölçütü ve izlenebilirlik.</p></div>
+          <div class="aside-card">
+            <strong>Birincil kaynak</strong>
+            <ul class="source-list">
+              <li><a href="https://quicksearch.dla.mil/qsDocDetails.aspx?ident_number=35978" rel="noreferrer">DLA Quick Search — MIL-STD-810H</a></li>
+            </ul>
+          </div>
+          <a class="button button-secondary" href="yazilar.html">Tüm notlar</a>
+        </aside>
+      </div>
+    </main>
+    <footer class="site-footer"><div class="container footer-bottom"><span>© <span data-year>2026</span> ARF İleri Teknoloji</span><span>Pendik, İstanbul / Türkiye · Kuruluş hazırlığında</span></div></footer>
+    <script src="script.js"></script>
+  </body>
 </html>
