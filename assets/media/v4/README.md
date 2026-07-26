@@ -15,9 +15,18 @@ laboratuvar sonucu, tesis, müşteri projesi veya iş ortaklığı göstermezler
 | `utopia-research-ip` | Araştırma, fikrî değer ve geleceğin bilgi ekseni |
 | `utopia-publications-atlas` | Çalışmalar ve araştırma notları |
 
-Her varlığın WebP posteri ile 18 saniyelik, sessiz ve döngüsel MP4 sürümü bulunur.
-Videolar durağan kaynaklardan yavaş kamera kaymasıyla türetilmiştir; hareket tercihi,
-görünürlük ve veri tasarrufu koşulları istemci tarafında yönetilir.
+Her varlığın WebP posteri ile 10 saniyelik, sessiz ve kusursuz döngülenen
+`-motion-v2.mp4` sürümü bulunur. Kamera tüm film boyunca sabittir. Hareket;
+enerji liflerinin biçim değiştirmesi, parçacıkların akış yollarında ilerlemesi,
+alan düğümlerinin ışık yayması ve atmosferik parçacıkların devinimiyle oluşur.
+Hareket tercihi, görünürlük ve veri tasarrufu koşulları istemci tarafında
+yönetilir.
+
+Hareket filmlerini yeniden üretmek için:
+
+```bash
+python3 tools/generate-v4-motion-films.py
+```
 
 ## Prompt seti
 
@@ -27,7 +36,7 @@ oranında üretildi. Ortak sanat yönü:
 - pozitif ve ütopyacı, ancak kurumsal ve teknik olarak ölçülü bir gelecek atmosferi;
 - grafit derinlik, turkuaz/camgöbeği enerji akışları, sıcak fildişi ışık ve çok
   sınırlı ARF kırmızısı düğümler;
-- yavaş parallax ve kamera kayması için ön, orta ve arka plan katmanları;
+- sabit kamera içinde gerçek sahne hareketine uygun ön, orta ve arka plan katmanları;
 - Türkçe başlıklar için kontrollü, düşük ayrıntılı karanlık metin alanı;
 - cam-seramik membranlar, kristal-mineral yapılar ve iletken ışık lifleri;
 - metin, logo, UI, grafik, veri, insan, şehir, fabrika, laboratuvar, güneş paneli,

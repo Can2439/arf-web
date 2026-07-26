@@ -6,32 +6,32 @@ document.documentElement.classList.add("js");
   const sceneLibrary = {
     home: {
       poster: "assets/media/v4/utopia-home-energy.webp",
-      video: "assets/media/v4/utopia-home-energy.mp4",
+      video: "assets/media/v4/utopia-home-energy-motion-v2.mp4",
       position: "62% center",
     },
     corporate: {
       poster: "assets/media/v4/utopia-corporate-core.webp",
-      video: "assets/media/v4/utopia-corporate-core.mp4",
+      video: "assets/media/v4/utopia-corporate-core-motion-v2.mp4",
       position: "58% center",
     },
     management: {
       poster: "assets/media/v4/utopia-energy-management.webp",
-      video: "assets/media/v4/utopia-energy-management.mp4",
+      video: "assets/media/v4/utopia-energy-management-motion-v2.mp4",
       position: "58% center",
     },
     harvesting: {
       poster: "assets/media/v4/utopia-energy-harvesting.webp",
-      video: "assets/media/v4/utopia-energy-harvesting.mp4",
+      video: "assets/media/v4/utopia-energy-harvesting-motion-v2.mp4",
       position: "62% center",
     },
     research: {
       poster: "assets/media/v4/utopia-research-ip.webp",
-      video: "assets/media/v4/utopia-research-ip.mp4",
+      video: "assets/media/v4/utopia-research-ip-motion-v2.mp4",
       position: "61% center",
     },
     publications: {
       poster: "assets/media/v4/utopia-publications-atlas.webp",
-      video: "assets/media/v4/utopia-publications-atlas.mp4",
+      video: "assets/media/v4/utopia-publications-atlas-motion-v2.mp4",
       position: "61% center",
     },
   };

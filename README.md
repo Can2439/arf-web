@@ -58,11 +58,18 @@ Editoryal kavramsal video varlıklarını yeniden üretmek için:
 python3 tools/generate-editorial-media.py
 ```
 
-Ana sayfadaki sinematik görsel sistem, `assets/media/v3/` altında üç özgün enerji
-alanı ve 12 saniyelik kesintisiz hareket döngüsü kullanır. Tüm bu varlıklar
-kavramsal görselleştirme olarak etiketlenir; gerçek ürün, prototip veya çalışma
-görüntüsü değildir. Video döngüleri sessizdir ve hareket azaltma tercihini
-destekler.
+Sinematik görsel sistem, `assets/media/v4/` altında altı özgün enerji evreni ve
+10 saniyelik kesintisiz hareket döngüleri kullanır. Kamera sabittir; enerji
+lifleri, ışık düğümleri ve parçacıklar sahnenin içinde hareket eder. Tüm bu
+varlıklar kavramsal görselleştirme olarak etiketlenir; gerçek ürün, prototip
+veya çalışma görüntüsü değildir. Video döngüleri sessizdir ve hareket azaltma
+terciğini destekler.
+
+V4 hareket filmlerini yeniden üretmek için:
+
+```bash
+python3 tools/generate-v4-motion-films.py
+```
 
 Üretim betiği Pillow ve FFmpeg gerektirir; yayımlanan sitenin çalışması için bu
 araçlara ihtiyaç yoktur.
