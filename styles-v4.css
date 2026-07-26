@@ -136,12 +136,44 @@ body.cinematic-site .header-inner {
 }
 
 body.cinematic-site .brand-modern {
-  display: inline-flex;
-  gap: 13px;
-  align-items: center;
-  min-width: max-content;
-  color: #fff;
+  display: inline-grid;
+  width: clamp(190px, 17vw, 226px);
+  height: 54px;
+  padding: 7px 10px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.16);
   text-decoration: none;
+  transition:
+    background 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+body.cinematic-site .brand-modern::before {
+  width: 100%;
+  height: 100%;
+  background: url("assets/brand/arf-logo.png") center / contain no-repeat;
+  content: "";
+}
+
+body.cinematic-site .brand-modern:hover {
+  background: #fff;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+body.cinematic-site .brand-modern:focus-visible {
+  outline: 3px solid var(--v4-cyan-bright);
+  outline-offset: 3px;
+}
+
+body.cinematic-site .brand-modern .brand-mark-wrap,
+body.cinematic-site .brand-modern .brand-type {
+  display: none;
 }
 
 body.cinematic-site .brand-mark-wrap {
@@ -2062,9 +2094,14 @@ body.cinematic-site .footer-grid {
 
 body.cinematic-site .footer-brand,
 body.cinematic-site img.footer-brand {
+  display: block;
   max-width: 250px;
   height: auto;
-  filter: brightness(0) invert(1);
+  padding: 9px 11px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.2);
+  filter: none;
 }
 
 body.cinematic-site .footer-brand-v3 {
@@ -2400,23 +2437,15 @@ body.cinematic-site.utility-page .content-panel .lead {
     --v4-radius: 22px;
   }
 
-  body.cinematic-site .brand-mark-wrap {
-    width: 38px;
-    height: 38px;
-    border-radius: 11px;
+  body.cinematic-site .brand-modern {
+    width: 48px;
+    height: 48px;
+    padding: 6px;
+    border-radius: 13px;
   }
 
-  body.cinematic-site .brand-mark {
-    width: 29px;
-    height: 29px;
-  }
-
-  body.cinematic-site .brand-type strong {
-    font-size: 1.1rem;
-  }
-
-  body.cinematic-site .brand-type small {
-    font-size: 0.52rem;
+  body.cinematic-site .brand-modern::before {
+    background-image: url("assets/brand/arf-mark.png");
   }
 
   body.cinematic-site .page-hero.cinematic-hero,
