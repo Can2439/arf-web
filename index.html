@@ -20,8 +20,9 @@
       content="Araştırmadan fikrî değere, fikrî değerden sürdürülebilir teknoloji yapılarına."
     >
     <meta property="og:url" content="https://arftech.tr/">
-    <meta property="og:image" content="https://arftech.tr/assets/media/v3/hero-luminous-energy.webp">
-    <link rel="stylesheet" href="styles.css?v=20260726-1">
+    <meta property="og:image" content="https://arftech.tr/assets/media/v4/utopia-home-energy.webp">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-v4.css">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -39,7 +40,7 @@
       }
     </script>
   </head>
-  <body class="home-v3">
+  <body class="cinematic-site home-v3 home-v4" data-scene="home">
     <a class="skip-link" href="#main">İçeriğe geç</a>
 
     <header class="site-header">
@@ -76,20 +77,20 @@
             muted
             loop
             playsinline
-            preload="metadata"
-            poster="assets/media/v3/hero-luminous-energy.webp"
+            preload="none"
+            poster="assets/media/v4/utopia-home-energy.webp"
             aria-hidden="true"
           >
-            <source src="assets/media/v3/hero-luminous-energy.mp4" type="video/mp4">
+            <source data-src="assets/media/v4/utopia-home-energy.mp4" type="video/mp4">
           </video>
           <div class="hero-v3-shade"></div>
           <div class="hero-v3-grid"></div>
           <div class="hero-v3-orbit orbit-one"></div>
           <div class="hero-v3-orbit orbit-two"></div>
-          <div class="motion-meta hero-motion-meta">
-            <span class="concept-label">Kavramsal görselleştirme</span>
-            <button class="motion-toggle" type="button" aria-pressed="false">Hareketi durdur</button>
-          </div>
+        </div>
+        <div class="motion-meta hero-motion-meta">
+          <span class="concept-label">Kavramsal görselleştirme</span>
+          <button class="motion-toggle" type="button" aria-pressed="true">Hareketi oynat</button>
         </div>
 
         <div class="container hero-v3-stage">
@@ -208,9 +209,9 @@
                 loop
                 playsinline
                 preload="none"
-                poster="assets/media/v3/energy-management-system.webp"
+                poster="assets/media/v4/utopia-energy-management.webp"
               >
-                <source src="assets/media/v3/energy-management-system.mp4" type="video/mp4">
+                <source data-src="assets/media/v4/utopia-energy-management.mp4" type="video/mp4">
               </video>
               <div class="focus-scene-shade"></div>
             </div>
@@ -246,9 +247,9 @@
                 loop
                 playsinline
                 preload="none"
-                poster="assets/media/v3/energy-harvesting-field.webp"
+                poster="assets/media/v4/utopia-energy-harvesting.webp"
               >
-                <source src="assets/media/v3/energy-harvesting-field.mp4" type="video/mp4">
+                <source data-src="assets/media/v4/utopia-energy-harvesting.mp4" type="video/mp4">
               </video>
               <div class="focus-scene-shade"></div>
             </div>
@@ -479,6 +480,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20260726-1"></script>
+    <script src="script-v4.js"></script>
   </body>
 </html>
