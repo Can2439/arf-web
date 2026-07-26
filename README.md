@@ -58,12 +58,12 @@ Editoryal kavramsal video varlıklarını yeniden üretmek için:
 python3 tools/generate-editorial-media.py
 ```
 
-Sinematik görsel sistem, `assets/media/v4/` altında altı özgün enerji evreni ve
-10 saniyelik kesintisiz hareket döngüleri kullanır. Kamera sabittir; enerji
-lifleri, ışık düğümleri ve parçacıklar sahnenin içinde hareket eder. Tüm bu
-varlıklar kavramsal görselleştirme olarak etiketlenir; gerçek ürün, prototip
-veya çalışma görüntüsü değildir. Video döngüleri sessizdir ve hareket azaltma
-terciğini destekler.
+Sinematik görsel sistem, `assets/media/v4/` altındaki altı özgün enerji evrenini
+ve `assets/media/v5/` altındaki iki ana enerji filmiyle kurulan hiyerarşiyi
+kullanır. V5 sistem ölçeğinde “Dengelenen enerji omurgası”, çekirdek ölçeğinde
+“Korunan enerji çekirdeği” anlatımını üstlenir. Tüm varlıklar kavramsal
+görselleştirme olarak etiketlenir; gerçek ürün, prototip veya çalışma görüntüsü
+değildir. Video döngüleri sessizdir ve hareket azaltma terciğini destekler.
 
 V4 hareket filmlerini yeniden üretmek için:
 

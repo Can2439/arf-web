@@ -5,9 +5,9 @@ document.documentElement.classList.add("js");
 
   const sceneLibrary = {
     home: {
-      poster: "assets/media/v4/utopia-home-energy.webp",
-      video: "assets/media/v4/utopia-home-energy-motion-v2.mp4",
-      position: "62% center",
+      poster: "assets/media/v5/arf-energy-backbone-v1.webp",
+      video: "assets/media/v5/arf-energy-backbone-v1.mp4",
+      position: "64% center",
     },
     corporate: {
       poster: "assets/media/v4/utopia-corporate-core.webp",
@@ -15,9 +15,14 @@ document.documentElement.classList.add("js");
       position: "58% center",
     },
     management: {
-      poster: "assets/media/v4/utopia-energy-management.webp",
-      video: "assets/media/v4/utopia-energy-management-motion-v2.mp4",
-      position: "58% center",
+      poster: "assets/media/v5/arf-protected-core-v1.webp",
+      video: "assets/media/v5/arf-protected-core-v1.mp4",
+      position: "68% center",
+    },
+    "management-overview": {
+      poster: "assets/media/v5/arf-energy-backbone-v1.webp",
+      video: "assets/media/v5/arf-energy-backbone-v1.mp4",
+      position: "64% center",
     },
     harvesting: {
       poster: "assets/media/v4/utopia-energy-harvesting.webp",
