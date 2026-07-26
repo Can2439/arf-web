@@ -10,17 +10,17 @@
     >
     <link rel="canonical" href="https://arftech.tr/">
     <link rel="icon" href="favicon.png" type="image/png">
-    <meta name="theme-color" content="#f4f1e9">
+    <meta name="theme-color" content="#071114">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="tr_TR">
     <meta property="og:site_name" content="ARF İleri Teknoloji">
-    <meta property="og:title" content="Enerji ve bilginin geleceği için temel teknolojiler">
+    <meta property="og:title" content="Enerjinin temelinden geleceğin bilgisine">
     <meta
       property="og:description"
       content="Araştırmadan fikrî değere, fikrî değerden sürdürülebilir teknoloji yapılarına."
     >
     <meta property="og:url" content="https://arftech.tr/">
-    <meta property="og:image" content="https://arftech.tr/assets/media/v2/energy-field-poster.webp">
+    <meta property="og:image" content="https://arftech.tr/assets/media/v3/hero-luminous-energy.webp">
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
       {
@@ -39,13 +39,19 @@
       }
     </script>
   </head>
-  <body>
+  <body class="home-v3">
     <a class="skip-link" href="#main">İçeriğe geç</a>
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html" aria-label="ARF İleri Teknoloji ana sayfa">
-          <img src="assets/brand/arf-logo.png" width="1200" height="260" alt="ARF İleri Teknoloji">
+        <a class="brand brand-modern" href="index.html" aria-label="ARF İleri Teknoloji ana sayfa">
+          <span class="brand-mark-wrap">
+            <img class="brand-mark" src="assets/brand/arf-mark.png" width="512" height="512" alt="">
+          </span>
+          <span class="brand-type">
+            <strong>ARF</strong>
+            <small>İleri Teknoloji</small>
+          </span>
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
           <span></span>
@@ -58,312 +64,380 @@
           <a href="teknoloji-alanlari.html">Teknoloji Alanları</a>
           <a href="arastirma-ip.html">Araştırma &amp; IP</a>
           <a href="yazilar.html">Çalışmalar</a>
-          <a class="nav-cta" href="#iletisim">İletişim</a>
+          <a class="nav-cta" href="#iletisim">İletişim <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
     </header>
 
     <main id="main">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy" data-reveal>
-            <span class="status-chip">Kuruluş hazırlığında</span>
-            <h1>Enerji ve bilginin geleceği için temel teknolojiler<span class="brand-dot">.</span></h1>
-            <p class="hero-lead">
-              Enerji yönetimi ve korunumu ile üretim ve hasat alanlarında başlayan araştırma;
-              fikrî mülkiyet, teknoloji transferi ve geleceğin bilgi sistemlerine uzanır.
+      <section class="hero-v3" aria-labelledby="hero-title">
+        <div class="hero-v3-media" data-motion-frame>
+          <video
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="assets/media/v3/hero-luminous-energy.webp"
+            aria-hidden="true"
+          >
+            <source src="assets/media/v3/hero-luminous-energy.mp4" type="video/mp4">
+          </video>
+          <div class="hero-v3-shade"></div>
+          <div class="hero-v3-grid"></div>
+          <div class="hero-v3-orbit orbit-one"></div>
+          <div class="hero-v3-orbit orbit-two"></div>
+          <div class="motion-meta hero-motion-meta">
+            <span class="concept-label">Kavramsal görselleştirme</span>
+            <button class="motion-toggle" type="button" aria-pressed="false">Hareketi durdur</button>
+          </div>
+        </div>
+
+        <div class="container hero-v3-stage">
+          <div class="hero-v3-copy" data-reveal>
+            <div class="hero-v3-kicker">
+              <span>ARF / Temel teknolojiler</span>
+              <span class="status-live"><i></i> Kuruluş hazırlığında</span>
+            </div>
+            <h1 id="hero-title">
+              Enerjinin temelinden
+              <span>geleceğin bilgisine.</span>
+            </h1>
+            <p>
+              Araştırmayı fikrî değere, fikrî değeri geleceğin teknoloji yapılarına
+              dönüştürecek uzun vadeli bir temel kuruyoruz.
             </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#yaklasim">
-                Yaklaşımımızı keşfedin <span class="arrow" aria-hidden="true">→</span>
+            <div class="hero-v3-actions">
+              <a class="button button-luminous" href="#yaklasim">
+                Yaklaşımımızı keşfedin <span aria-hidden="true">↘</span>
               </a>
-              <a class="button button-secondary" href="#odaklar">Teknoloji alanları</a>
+              <a class="text-link-light" href="teknoloji-alanlari.html">
+                Teknoloji alanları <span aria-hidden="true">↗</span>
+              </a>
             </div>
           </div>
 
-          <div class="hero-visual" data-reveal>
-            <div class="motion-frame" data-motion-frame>
+          <div class="hero-v3-side-note" data-reveal>
+            <span>01 — 02</span>
+            <p>Enerji yönetimi ve korunumu<br>Enerji üretimi ve hasadı</p>
+          </div>
+        </div>
+
+        <div class="hero-v3-rail">
+          <div class="container">
+            <div>
+              <span>Bugünkü araştırma alanı</span>
+              <strong>Enerji</strong>
+            </div>
+            <div class="rail-line"><i></i></div>
+            <div>
+              <span>Gelecek araştırma ufku</span>
+              <strong>Bilgi</strong>
+            </div>
+            <a href="#yaklasim" aria-label="Bir sonraki bölüme geç">Aşağı <span>↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="manifesto-v3" id="yaklasim">
+        <div class="container manifesto-v3-grid">
+          <div class="manifesto-v3-label" data-reveal>
+            <span>ARF’nin konumu</span>
+            <i></i>
+          </div>
+          <div class="manifesto-v3-copy" data-reveal>
+            <p>
+              ARF bir ürün vitrini değil;
+              <strong>teknolojinin doğduğu, korunduğu ve çoğaldığı temel katmandır.</strong>
+            </p>
+          </div>
+          <div class="manifesto-v3-detail" data-reveal>
+            <p>
+              Bilimsel derinliği endüstriyel karşılığa taşıyan; fikrî mülkiyet, patent ve
+              lisanslama yapıları için uzun vadeli bir araştırma zemini.
+            </p>
+            <a href="kurumsal.html">Kurumsal yaklaşım <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="container constellation" role="group" aria-label="ARF değer oluşturma modeli">
+          <div class="constellation-core" data-reveal>
+            <span>ARF</span>
+            <small>Temel teknoloji<br>katmanı</small>
+          </div>
+          <div class="constellation-path" aria-hidden="true"></div>
+          <ol>
+            <li data-reveal>
+              <span>01</span>
+              <strong>Araştırma</strong>
+              <small>Açık problem, bilimsel yöntem, doğrulama</small>
+            </li>
+            <li data-reveal>
+              <span>02</span>
+              <strong>Fikrî değer</strong>
+              <small>Korunabilir ve aktarılabilir teknoloji varlığı</small>
+            </li>
+            <li data-reveal>
+              <span>03</span>
+              <strong>Teknoloji transferi</strong>
+              <small>Lisanslama ve ortak geliştirme zemini</small>
+            </li>
+            <li data-reveal>
+              <span>04</span>
+              <strong>Operasyonel yapılar</strong>
+              <small>Geleceğin alt marka ve şirketleri</small>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="focus-story-v3" id="odaklar">
+        <div class="container focus-story-v3-heading" data-reveal>
+          <span class="v3-kicker">Bugünkü araştırma odağı / 01—02</span>
+          <h2>Enerjide iki<br>mihenk taşı.</h2>
+          <p>
+            Enerjinin nasıl yönetildiğini ve nasıl elde edildiğini aynı sistem bütünlüğü
+            içinde ele alan iki tamamlayıcı eksen.
+          </p>
+        </div>
+
+        <div class="container focus-scenes">
+          <article class="focus-scene focus-scene-dark" data-focus-scene>
+            <div class="focus-scene-media" data-motion-frame aria-hidden="true">
               <video
                 muted
                 loop
                 playsinline
-                preload="metadata"
-                poster="assets/media/v2/energy-field-poster.webp"
-                aria-hidden="true"
+                preload="none"
+                poster="assets/media/v3/energy-management-system.webp"
               >
-                <source src="assets/media/v2/energy-field.mp4" type="video/mp4">
+                <source src="assets/media/v3/energy-management-system.mp4" type="video/mp4">
               </video>
-              <div class="motion-meta">
-                <span class="concept-label">Kavramsal görselleştirme</span>
-                <button class="motion-toggle" type="button" aria-pressed="false">Hareketi durdur</button>
+              <div class="focus-scene-shade"></div>
+            </div>
+            <div class="focus-scene-content">
+              <div class="focus-scene-index">
+                <span>01</span>
+                <small>Enerji alanı</small>
               </div>
-            </div>
-          </div>
-
-          <div class="hero-note" data-reveal>
-            <div>
-              <strong>Bugünkü odak</strong>
-              <span>Enerji teknolojileri</span>
-            </div>
-            <div>
-              <strong>Gelecek ufku</strong>
-              <span>Bilgi teknolojileri</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-white" id="yaklasim">
-        <div class="container">
-          <div class="section-heading" data-reveal>
-            <div>
-              <span class="kicker">ARF’nin konumu</span>
-              <h2>Ürünün öncesindeki temel katman.</h2>
-            </div>
-            <p>
-              ARF; tek bir ürün kataloğu oluşturmak yerine, farklı ürün ve girişimlerin
-              üzerinde yükselebileceği teknoloji birikimini kurmayı hedefler.
-            </p>
-          </div>
-
-          <div class="card-grid">
-            <article class="card" data-reveal>
-              <span class="card-index">01</span>
-              <h3>Araştırma</h3>
-              <p>
-                Enerji sistemlerindeki temel problemleri bilimsel yöntem, deneysel doğrulama
-                ve sistem bakışıyla ele almak.
-              </p>
-            </article>
-            <article class="card card-red" data-reveal>
-              <span class="card-index">02</span>
-              <h3>Fikrî değer</h3>
-              <p>
-                Oluşan bilgi birikimini korunabilir, aktarılabilir ve lisanslanabilir teknoloji
-                varlıklarına dönüştürmek.
-              </p>
-            </article>
-            <article class="card card-blue" data-reveal>
-              <span class="card-index">03</span>
-              <h3>Ticarileşme zemini</h3>
-              <p>
-                Ürünleşme ve müşteri entegrasyonunu gelecekte kurulacak alt marka veya
-                şirketler için güçlü bir temele oturtmak.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="odaklar">
-        <div class="container">
-          <div class="section-heading" data-reveal>
-            <div>
-              <span class="kicker">Bugünkü araştırma odağı</span>
-              <h2>Enerjide iki mihenk taşı.</h2>
-            </div>
-            <p>
-              Birbirini tamamlayan iki eksen; enerjinin nasıl yönetildiğini ve nasıl elde
-              edildiğini aynı sistem bütünlüğü içinde ele alır.
-            </p>
-          </div>
-
-          <div class="focus-grid">
-            <article class="focus-card" data-reveal>
-              <div class="focus-content">
-                <span class="eyebrow">Birinci eksen</span>
-                <h3>Enerji Yönetimi ve Korunumu</h3>
+              <div class="focus-scene-copy" data-reveal>
+                <span class="v3-kicker">Yönet / Koru / Dönüştür</span>
+                <h3>Enerji Yönetimi<br>ve Korunumu</h3>
                 <p>
                   Enerjinin güvenli, verimli ve sürdürülebilir biçimde dönüştürülmesi,
                   yönlendirilmesi ve korunmasına yönelik temel teknoloji yaklaşımı.
                 </p>
-                <ul class="topic-list">
-                  <li>Sistem verimliliği ve kayıp yönetimi</li>
-                  <li>Güvenli çalışma ve dayanıklılık</li>
-                  <li>Algılama, kontrol ve durum farkındalığı</li>
+                <ul>
+                  <li>Sistem verimliliği</li>
+                  <li>Güvenli çalışma</li>
+                  <li>Durum farkındalığı</li>
                 </ul>
               </div>
-              <span class="number" aria-hidden="true">01</span>
-            </article>
+            </div>
+            <div class="focus-scene-meta">
+              <span>Kavramsal görselleştirme</span>
+              <button class="motion-toggle" type="button" aria-pressed="false">Hareketi durdur</button>
+            </div>
+          </article>
 
-            <article class="focus-card" data-reveal>
-              <div class="focus-content">
-                <span class="eyebrow">İkinci eksen</span>
-                <h3>Enerji Üretimi ve Hasadı</h3>
+          <article class="focus-scene focus-scene-light" data-focus-scene>
+            <div class="focus-scene-media" data-motion-frame aria-hidden="true">
+              <video
+                muted
+                loop
+                playsinline
+                preload="none"
+                poster="assets/media/v3/energy-harvesting-field.webp"
+              >
+                <source src="assets/media/v3/energy-harvesting-field.mp4" type="video/mp4">
+              </video>
+              <div class="focus-scene-shade"></div>
+            </div>
+            <div class="focus-scene-content">
+              <div class="focus-scene-index">
+                <span>02</span>
+                <small>Enerji alanı</small>
+              </div>
+              <div class="focus-scene-copy" data-reveal>
+                <span class="v3-kicker">Yakla / Uygunlaştır / Dağıt</span>
+                <h3>Enerji Üretimi<br>ve Hasadı</h3>
                 <p>
-                  Farklı kaynaklardan elde edilen enerjinin yakalanması, uygunlaştırılması ve
-                  kullanılabilir bir sistem girdisine dönüştürülmesine yönelik araştırmalar.
+                  Farklı kaynaklardan elde edilen enerjinin yakalanması, uygunlaştırılması
+                  ve kullanılabilir bir sistem girdisine dönüştürülmesine yönelik araştırmalar.
                 </p>
-                <ul class="topic-list">
-                  <li>Dağıtık ve çevresel enerji kaynakları</li>
-                  <li>Enerji toplama ve uygunlaştırma</li>
-                  <li>Kaynak ile kullanım arasındaki bütünleşme</li>
+                <ul>
+                  <li>Çevresel kaynaklar</li>
+                  <li>Enerji toplama</li>
+                  <li>Sistem bütünleşmesi</li>
                 </ul>
               </div>
-              <span class="number" aria-hidden="true">02</span>
-            </article>
-          </div>
-
-          <div class="future-panel" data-reveal>
-            <div class="future-symbol" aria-hidden="true">→</div>
-            <div>
-              <span class="kicker">Gelecek araştırma ufku</span>
-              <h3>Enerjiden bilgiye</h3>
-              <p>
-                Enerji alanında kurulan sistem yaklaşımının, ilerleyen dönemde bilginin
-                üretilmesi, yönetilmesi ve korunmasına yönelik temel teknolojilere taşınması
-                hedeflenmektedir. Bu alan henüz aktif faaliyet olarak sunulmamaktadır.
-              </p>
             </div>
-          </div>
+            <div class="focus-scene-meta">
+              <span>Kavramsal görselleştirme</span>
+              <button class="motion-toggle" type="button" aria-pressed="false">Hareketi durdur</button>
+            </div>
+          </article>
+        </div>
 
-          <div class="button-row mt-34">
-            <a class="button button-secondary" href="teknoloji-alanlari.html">
-              Teknoloji alanlarını incele <span class="arrow" aria-hidden="true">→</span>
-            </a>
+        <div class="container future-horizon-v3" data-reveal>
+          <span class="v3-kicker">Sonraki ufuk</span>
+          <div>
+            <h3>Enerjiden bilgiye.</h3>
+            <p>
+              Enerji alanında kurulan sistem yaklaşımının, ilerleyen dönemde bilginin
+              üretilmesi, yönetilmesi ve korunmasına taşınması hedeflenmektedir.
+              Bu alan henüz aktif faaliyet olarak sunulmamaktadır.
+            </p>
           </div>
+          <a href="teknoloji-alanlari.html" aria-label="Teknoloji alanlarını incele">↗</a>
         </div>
       </section>
 
-      <section class="section section-ink">
-        <div class="container architecture">
-          <div class="architecture-intro" data-reveal>
-            <span class="kicker">Değer oluşturma modeli</span>
-            <h2>Araştırmadan etkiye.</h2>
-            <p>
-              ARF’nin görevi, bilginin doğduğu yer ile pazarda değer oluşturduğu yer arasında
-              düzenli ve güvenilir bir teknoloji hattı kurmaktır.
-            </p>
+      <section class="value-flow-v3">
+        <div class="value-marquee" aria-hidden="true">
+          <div>
+            <span>Araştırma</span><i>✦</i>
+            <span>Fikrî Değer</span><i>✦</i>
+            <span>Teknoloji Transferi</span><i>✦</i>
+            <span>Gelecek Yapılar</span><i>✦</i>
+            <span>Araştırma</span><i>✦</i>
+            <span>Fikrî Değer</span><i>✦</i>
+            <span>Teknoloji Transferi</span><i>✦</i>
+            <span>Gelecek Yapılar</span><i>✦</i>
           </div>
+        </div>
 
-          <div class="architecture-list">
-            <article class="architecture-item" data-reveal>
+        <div class="container value-flow-v3-grid">
+          <div class="value-flow-v3-intro" data-reveal>
+            <span class="v3-kicker">Değer oluşturma modeli</span>
+            <h2>Bilginin doğduğu yer ile pazarda değer oluşturduğu yer arasında.</h2>
+          </div>
+          <div class="value-flow-v3-list">
+            <article data-reveal>
               <span>01</span>
-              <div>
-                <h3>Temel araştırma</h3>
-                <p>Problem alanının, yöntemlerin ve teknik varsayımların oluşturulması.</p>
-              </div>
+              <h3>Temel araştırma</h3>
+              <p>Problem alanının, yöntemlerin ve teknik varsayımların oluşturulması.</p>
             </article>
-            <article class="architecture-item" data-reveal>
+            <article data-reveal>
               <span>02</span>
-              <div>
-                <h3>Doğrulama ve bilgi birikimi</h3>
-                <p>Deneysel çalışmalarla tekrarlanabilir mühendislik bilgisinin kurulması.</p>
-              </div>
+              <h3>Doğrulama</h3>
+              <p>Tekrarlanabilir mühendislik bilgisinin deneysel yöntemlerle kurulması.</p>
             </article>
-            <article class="architecture-item" data-reveal>
+            <article data-reveal>
               <span>03</span>
-              <div>
-                <h3>Fikrî mülkiyet</h3>
-                <p>Uygun çıktıların korunabilir ve lisanslanabilir varlıklara dönüştürülmesi.</p>
-              </div>
+              <h3>Fikrî mülkiyet</h3>
+              <p>Uygun çıktıların korunabilir ve lisanslanabilir varlıklara dönüşmesi.</p>
             </article>
-            <article class="architecture-item" data-reveal>
+            <article data-reveal>
               <span>04</span>
-              <div>
-                <h3>Operasyonel yapılar</h3>
-                <p>Ürünleşmenin ve müşteri entegrasyonunun ayrı marka veya şirketlerde yürütülmesi.</p>
-              </div>
+              <h3>Operasyonel yapılar</h3>
+              <p>Ürünleşme ve müşteri entegrasyonunun gelecekte ayrı yapılarda yürütülmesi.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="section-heading" data-reveal>
-            <div>
-              <span class="kicker">İki dünya arasında</span>
-              <h2>Akademik derinlik, endüstriyel etki.</h2>
-            </div>
+      <section class="bridge-v3">
+        <div class="bridge-v3-media" aria-hidden="true"></div>
+        <div class="container bridge-v3-inner">
+          <div class="bridge-v3-heading" data-reveal>
+            <span class="v3-kicker">İki dünya arasında</span>
+            <h2>Akademik derinlik.<br><em>Endüstriyel etki.</em></h2>
             <p>
-              Kuruluş aşamasındaki ARF, bugünden var olmayan iş birliklerini sıralamak yerine,
-              iş birliğinin hangi ilkelere dayanacağını açıkça tanımlar.
+              Bugünden var olmayan iş birliklerini sıralamak yerine, gelecekteki iş birliğinin
+              dayanacağı ilkeleri açıkça tanımlıyoruz.
             </p>
           </div>
 
-          <div class="bridge" data-reveal>
-            <article class="bridge-panel">
-              <small>Akademi</small>
+          <div class="bridge-v3-poles">
+            <article data-reveal>
+              <span>A / Akademi</span>
               <h3>Bilginin niteliği</h3>
-              <p>
-                Kaynaklı araştırma, açık problem tanımı, tekrarlanabilir yöntem ve eleştirel
-                teknik değerlendirme.
-              </p>
+              <p>Kaynaklı araştırma, açık problem tanımı, tekrarlanabilir yöntem.</p>
               <ul>
-                <li>Araştırma soruları ve teknik notlar</li>
-                <li>Bilimsel kaynaklarla kurulan düşünce zemini</li>
-                <li>Uzun vadeli bilgi ve yetkinlik oluşumu</li>
+                <li>Araştırma soruları</li>
+                <li>Bilimsel düşünce zemini</li>
+                <li>Uzun vadeli yetkinlik</li>
               </ul>
             </article>
-            <article class="bridge-panel">
-              <small>Endüstri</small>
+            <div class="bridge-v3-axis" aria-hidden="true">
+              <i></i>
+              <span>ARF</span>
+              <i></i>
+            </div>
+            <article data-reveal>
+              <span>B / Endüstri</span>
               <h3>Bilginin karşılığı</h3>
-              <p>
-                Araştırma çıktılarının güvenilir, aktarılabilir ve ölçeklenebilir teknoloji
-                yapılarına dönüşmesi.
-              </p>
+              <p>Güvenilir, aktarılabilir ve ölçeklenebilir teknoloji yapıları.</p>
               <ul>
-                <li>Ortak geliştirmeye hazır teknoloji çekirdekleri</li>
-                <li>Lisanslama ve teknoloji transferi yaklaşımı</li>
-                <li>Gelecekteki alt yapılara ürünleşme zemini</li>
+                <li>Ortak geliştirme zemini</li>
+                <li>Lisanslama yaklaşımı</li>
+                <li>Geleceğin ürün yapıları</li>
               </ul>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section-white">
+      <section class="notes-v3">
         <div class="container">
-          <div class="section-heading" data-reveal>
-            <div>
-              <span class="kicker">Araştırma notları</span>
-              <h2>İddia değil, düşünce zemini.</h2>
-            </div>
+          <div class="notes-v3-heading" data-reveal>
+            <span class="v3-kicker">Araştırma notları</span>
+            <h2>İddia değil,<br>düşünce zemini.</h2>
             <p>
-              Teknik içerikler ürün tanıtımı veya müşteri başarı hikâyesi değil; araştırma
-              yaklaşımını görünür kılan, kaynaklı mühendislik notlarıdır.
+              Ürün tanıtımı veya başarı hikâyesi değil; araştırma yaklaşımını görünür kılan
+              kaynaklı mühendislik notları.
             </p>
           </div>
 
-          <div class="note-grid">
-            <a class="note-card" href="arf-insight-layout.html" data-reveal>
-              <span class="note-type">Mühendislik notu</span>
-              <h3>Yüksek hızlı anahtarlamada yerleşim bir sistem problemidir</h3>
-              <p>Parazitik etkiler, akım çevrimleri ve ölçüm disiplinine giriş.</p>
-              <span class="note-link">Notu oku →</span>
+          <div class="notes-v3-grid">
+            <a class="note-v3 note-v3-featured" href="arf-insight-layout.html" data-reveal>
+              <span class="note-v3-visual visual-layout" aria-hidden="true"></span>
+              <div class="note-v3-body">
+                <small>Mühendislik notu / 01</small>
+                <h3>Yüksek hızlı anahtarlamada yerleşim bir sistem problemidir</h3>
+                <p>Parazitik etkiler, akım çevrimleri ve ölçüm disiplinine giriş.</p>
+                <strong>Notu oku <span aria-hidden="true">↗</span></strong>
+              </div>
             </a>
-            <a class="note-card" href="mil-std-810h.html" data-reveal>
-              <span class="note-type">Doğrulama yaklaşımı</span>
-              <h3>Çevresel testlerde bağlam ve uyarlama</h3>
-              <p>Standart adı kullanmanın ötesinde, görev profiline dayalı test mantığı.</p>
-              <span class="note-link">Notu oku →</span>
+            <a class="note-v3" href="mil-std-810h.html" data-reveal>
+              <span class="note-v3-visual visual-validation" aria-hidden="true"></span>
+              <div class="note-v3-body">
+                <small>Doğrulama yaklaşımı / 02</small>
+                <h3>Çevresel testlerde bağlam ve uyarlama</h3>
+                <strong>Notu oku <span aria-hidden="true">↗</span></strong>
+              </div>
             </a>
-            <a class="note-card" href="sic-termal-analiz.html" data-reveal>
-              <span class="note-type">Termal tasarım</span>
-              <h3>Isı yolunu erken aşamada kurmak</h3>
-              <p>Güç yoğunluğu, arayüzler ve sıcaklık ölçümünün birlikte değerlendirilmesi.</p>
-              <span class="note-link">Notu oku →</span>
+            <a class="note-v3" href="sic-termal-analiz.html" data-reveal>
+              <span class="note-v3-visual visual-thermal" aria-hidden="true"></span>
+              <div class="note-v3-body">
+                <small>Termal tasarım / 03</small>
+                <h3>Isı yolunu erken aşamada kurmak</h3>
+                <strong>Notu oku <span aria-hidden="true">↗</span></strong>
+              </div>
             </a>
           </div>
 
-          <div class="button-row mt-34">
-            <a class="button button-secondary" href="yazilar.html">Tüm çalışmaları gör</a>
-          </div>
+          <a class="notes-v3-all" href="yazilar.html">
+            <span>Tüm çalışmaları incele</span><span aria-hidden="true">↗</span>
+          </a>
         </div>
       </section>
 
-      <section class="section" id="iletisim">
-        <div class="container">
-          <div class="cta-band" data-reveal>
-            <span class="eyebrow eyebrow-light">İletişim</span>
-            <h2>Temel teknolojiler için uzun vadeli bir zemin kuruyoruz.</h2>
+      <section class="contact-v3" id="iletisim">
+        <div class="contact-v3-glow" aria-hidden="true"></div>
+        <div class="container contact-v3-inner" data-reveal>
+          <div>
+            <span class="v3-kicker">İletişim / İstanbul</span>
+            <h2>Bir sonraki temel teknoloji konuşması burada başlayabilir.</h2>
             <p>
               Araştırma diyaloğu, teknoloji geliştirme yaklaşımı veya ARF’nin kuruluş süreci
               hakkında iletişime geçebilirsiniz.
             </p>
-            <a class="button" href="mailto:info@arftech.tr">info@arftech.tr</a>
           </div>
+          <a href="mailto:info@arftech.tr">
+            <span>info@arftech.tr</span>
+            <strong aria-hidden="true">↗</strong>
+          </a>
         </div>
       </section>
     </main>
@@ -371,7 +445,15 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
-          <img class="footer-brand" src="assets/brand/arf-logo.png" width="1200" height="260" alt="ARF İleri Teknoloji">
+          <a class="brand brand-modern footer-brand-v3" href="index.html" aria-label="ARF İleri Teknoloji ana sayfa">
+            <span class="brand-mark-wrap">
+              <img class="brand-mark" src="assets/brand/arf-mark.png" width="512" height="512" alt="">
+            </span>
+            <span class="brand-type">
+              <strong>ARF</strong>
+              <small>İleri Teknoloji</small>
+            </span>
+          </a>
           <p class="footer-copy">
             Enerji alanından başlayarak temel teknoloji, fikrî değer ve gelecek girişimlerin
             altyapısını oluşturmayı hedefleyen teknoloji yapılanması.
@@ -393,7 +475,7 @@
       </div>
       <div class="container footer-bottom">
         <span>© <span data-year>2026</span> ARF İleri Teknoloji</span>
-        <span>Araştırma · Fikrî değer · Teknoloji transferi</span>
+        <span>Pendik, İstanbul / Türkiye</span>
       </div>
     </footer>
 

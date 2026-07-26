@@ -73,7 +73,9 @@ const setToggleLabel = (button, isPlaying) => {
 
 motionFrames.forEach((frame) => {
   const video = frame.querySelector("video");
-  const toggle = frame.querySelector(".motion-toggle");
+  const toggle =
+    frame.querySelector(".motion-toggle") ||
+    frame.closest("[data-focus-scene]")?.querySelector(".motion-toggle");
   if (!video || !toggle) return;
 
   if (reduceMotion.matches) {
@@ -99,7 +101,9 @@ if ("IntersectionObserver" in window && !reduceMotion.matches) {
     (entries) => {
       entries.forEach((entry) => {
         const video = entry.target.querySelector("video");
-        const toggle = entry.target.querySelector(".motion-toggle");
+        const toggle =
+          entry.target.querySelector(".motion-toggle") ||
+          entry.target.closest("[data-focus-scene]")?.querySelector(".motion-toggle");
         if (!video || !toggle) return;
         if (entry.isIntersecting) {
           video.play().then(() => setToggleLabel(toggle, true)).catch(() => {});
@@ -113,3 +117,34 @@ if ("IntersectionObserver" in window && !reduceMotion.matches) {
   );
   motionFrames.forEach((frame) => motionObserver.observe(frame));
 }
+
+const immersiveHero = document.querySelector(".hero-v3");
+if (immersiveHero && !reduceMotion.matches) {
+  immersiveHero.addEventListener(
+    "pointermove",
+    (event) => {
+      const bounds = immersiveHero.getBoundingClientRect();
+      const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+      const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+      immersiveHero.style.setProperty("--hero-x", `${x * -10}px`);
+      immersiveHero.style.setProperty("--hero-y", `${y * -7}px`);
+      immersiveHero.style.setProperty("--hero-scale", `${Math.abs(x) * 0.006}`);
+    },
+    { passive: true },
+  );
+
+  immersiveHero.addEventListener("pointerleave", () => {
+    immersiveHero.style.setProperty("--hero-x", "0px");
+    immersiveHero.style.setProperty("--hero-y", "0px");
+    immersiveHero.style.setProperty("--hero-scale", "0");
+  });
+}
+
+const updatePageProgress = () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
+  document.documentElement.style.setProperty("--page-progress", progress.toFixed(4));
+};
+
+updatePageProgress();
+window.addEventListener("scroll", updatePageProgress, { passive: true });

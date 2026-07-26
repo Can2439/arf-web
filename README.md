@@ -52,15 +52,20 @@ Site, statik HTML, CSS ve JavaScript ile hazırlanmıştır. Kullanılan yazı t
 proje içinde barındırılır; ziyaretçi tarafında haricî arayüz bağımlılığı yoktur.
 Yerel olarak herhangi bir statik dosya sunucusuyla çalıştırılabilir.
 
-Kavramsal video varlıklarını yeniden üretmek için:
+Editoryal kavramsal video varlıklarını yeniden üretmek için:
 
 ```bash
 python3 tools/generate-editorial-media.py
 ```
 
-Yeni görsel sistem; özgün enerji alanı görselleri ile 10 saniyelik, kesintisiz
-soyut hareket döngülerini kullanır. Üretim betiği Pillow ve FFmpeg gerektirir;
-yayımlanan sitenin çalışması için bu araçlara ihtiyaç yoktur.
+Ana sayfadaki sinematik görsel sistem, `assets/media/v3/` altında üç özgün enerji
+alanı ve 12 saniyelik kesintisiz hareket döngüsü kullanır. Tüm bu varlıklar
+kavramsal görselleştirme olarak etiketlenir; gerçek ürün, prototip veya çalışma
+görüntüsü değildir. Video döngüleri sessizdir ve hareket azaltma tercihini
+destekler.
+
+Üretim betiği Pillow ve FFmpeg gerektirir; yayımlanan sitenin çalışması için bu
+araçlara ihtiyaç yoktur.
 
 ## Yayın
 
