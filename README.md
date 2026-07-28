@@ -6,16 +6,16 @@ Canlı adres: [arftech.tr](https://arftech.tr/)
 
 ## Konumlandırma
 
-Site, ARF'yi kuruluş hazırlığındaki bir temel teknoloji ve fikrî mülkiyet
-yapılanması olarak anlatır.
+Site, ARF'yi güç elektroniği, Edge AI ve savunma standartlarında sistem
+mühendisliğini aynı mimaride birleştiren ileri mühendislik şirketi olarak anlatır.
 
-İlk araştırma odağı iki eksenden oluşur:
+Ana anlatı iki tamamlayıcı mihenk taşı etrafında kurulur:
 
-1. Enerji Yönetimi ve Korunumu
-2. Enerji Üretimi ve Hasadı
+1. Korunan Enerji Çekirdeği
+2. Dengelenen Enerji Omurgası
 
-Bilgi teknolojileri, enerji alanındaki birikimin ardından ele alınacak gelecek
-araştırma ufku olarak konumlandırılır.
+Teknik kapsam, güç elektroniği ve inverter sağlık izleme ekseninde tutulur;
+ürünün entegre olduğu bütün sistemi teşhis ettiği iddia edilmez.
 
 ## İçerik ilkeleri
 
@@ -24,7 +24,7 @@ araştırma ufku olarak konumlandırılır.
 - Ürün özellikleri ana kurumsal anlatının merkezine alınmaz.
 - Teknik notlar birincil kaynaklara dayanır ve neyi kanıtlamadığını açıklar.
 - Kavramsal hareketli görseller gerçek proje görüntüsü gibi sunulmaz.
-- Açıklanmamış program veya ekosistem ilişkileri anılmaz.
+- Yalnızca kamuya açıklanmasına izin verilen program ve ekosistem ilişkileri kullanılır.
 
 ## Yapı
 
@@ -58,12 +58,16 @@ Editoryal kavramsal video varlıklarını yeniden üretmek için:
 python3 tools/generate-editorial-media.py
 ```
 
-Sinematik görsel sistem, `assets/media/v4/` altındaki altı özgün enerji evrenini
-ve `assets/media/v5/` altındaki iki ana enerji filmiyle kurulan hiyerarşiyi
-kullanır. V5 sistem ölçeğinde “Dengelenen enerji omurgası”, çekirdek ölçeğinde
-“Korunan enerji çekirdeği” anlatımını üstlenir. Tüm varlıklar kavramsal
-görselleştirme olarak etiketlenir; gerçek ürün, prototip veya çalışma görüntüsü
-değildir. Video döngüleri sessizdir ve hareket azaltma terciğini destekler.
+Ana sayfadaki sinematik anlatı `assets/media/v6/` altındaki iki kullanıcı
+filmini kullanır. V6 videolar kısa anahtar-kare aralığı, `faststart`, sessiz
+oynatım ve kontrollü döngü geçişiyle kaydırmaya bağlı kare arama için
+hazırlanmıştır.
+
+Ana sayfa herhangi bir animasyon framework'üne bağlı değildir. Doğal tarayıcı
+kaydırmasını izleyen `script-v6.js`; açılış, iki mihenk taşı, sistem katmanları
+ve final sahnelerini ilerleme değerine göre yönetir. Mobil cihazlarda ağır kare
+arama yerine optimize edilmiş oynatım ve crossfade; hareket azaltma tercihinde
+ise poster tabanlı durağan anlatım kullanılır.
 
 V4 hareket filmlerini yeniden üretmek için:
 
