@@ -821,7 +821,6 @@ body.home-v6 .focus-modules,
 body.home-v6 .mission-section,
 body.home-v6 .technical-notes {
   color: var(--story-graphite);
-  content-visibility: auto;
 }
 
 body.home-v6 .focus-modules {
