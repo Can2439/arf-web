@@ -1251,6 +1251,16 @@ body.home-v6 .final-story {
   background: #061013;
 }
 
+body.home-v6 .final-contact-anchor {
+  position: absolute;
+  top: 36%;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  scroll-margin-top: var(--story-header-height);
+  pointer-events: none;
+}
+
 body.home-v6 .final-stage {
   background: #061013;
 }
