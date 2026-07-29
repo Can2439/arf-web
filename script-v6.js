@@ -75,15 +75,32 @@ document.documentElement.classList.add("js");
     }
   };
 
+  const hasUsableSeekRange = (video) => {
+    if (!video || video.seekable.length === 0) return false;
+    try {
+      return video.seekable.end(video.seekable.length - 1) > 0.1;
+    } catch {
+      return false;
+    }
+  };
+
   const scrubVideo = (video, progress) => {
     if (!video || reduceMotion.matches || mobileMotion.matches || saveData) return;
     loadVideo(video);
-    pauseVideo(video);
     video.dataset.scrubProgress = String(clamp(progress));
     if (video.dataset.scrubBound !== "true") {
       video.dataset.scrubBound = "true";
       video.addEventListener("loadedmetadata", () => applyScrubTarget(video));
     }
+
+    if (!hasUsableSeekRange(video)) {
+      video.dataset.scrubFallback = "true";
+      void playVideo(video);
+      return;
+    }
+
+    video.dataset.scrubFallback = "false";
+    pauseVideo(video);
     applyScrubTarget(video);
   };
 
@@ -406,8 +423,10 @@ document.documentElement.classList.add("js");
 
     const storyPlaybackObserver = new IntersectionObserver(
       (entries) => {
-        if (!mobileMotion.matches) return;
         entries.forEach((entry) => {
+          const needsPlayback =
+            mobileMotion.matches || entry.target.dataset.scrubFallback === "true";
+          if (!needsPlayback) return;
           if (entry.isIntersecting && entry.intersectionRatio >= 0.12) {
             playVideo(entry.target);
           } else {

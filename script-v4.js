@@ -3,84 +3,9 @@ document.documentElement.classList.add("js");
 (() => {
   "use strict";
 
-  const sceneLibrary = {
-    home: {
-      poster: "assets/media/v5/arf-energy-backbone-v1.webp",
-      video: "assets/media/v5/arf-energy-backbone-v1.mp4",
-      position: "64% center",
-    },
-    corporate: {
-      poster: "assets/media/v4/utopia-corporate-core.webp",
-      video: "assets/media/v4/utopia-corporate-core-motion-v2.mp4",
-      position: "58% center",
-    },
-    management: {
-      poster: "assets/media/v5/arf-protected-core-v1.webp",
-      video: "assets/media/v5/arf-protected-core-v1.mp4",
-      position: "68% center",
-    },
-    "management-overview": {
-      poster: "assets/media/v5/arf-energy-backbone-v1.webp",
-      video: "assets/media/v5/arf-energy-backbone-v1.mp4",
-      position: "64% center",
-    },
-    harvesting: {
-      poster: "assets/media/v4/utopia-energy-harvesting.webp",
-      video: "assets/media/v4/utopia-energy-harvesting-motion-v2.mp4",
-      position: "62% center",
-    },
-    research: {
-      poster: "assets/media/v4/utopia-research-ip.webp",
-      video: "assets/media/v4/utopia-research-ip-motion-v2.mp4",
-      position: "61% center",
-    },
-    publications: {
-      poster: "assets/media/v4/utopia-publications-atlas.webp",
-      video: "assets/media/v4/utopia-publications-atlas-motion-v2.mp4",
-      position: "61% center",
-    },
-  };
-
   const body = document.body;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const saveData = Boolean(navigator.connection?.saveData);
-  const resolveAsset = (path) => `${body.dataset.assetRoot || ""}${path}`;
-
-  const createCinematicHero = () => {
-    const scene = sceneLibrary[body.dataset.scene];
-    const hero = document.querySelector(".page-hero, .article-header");
-    if (!scene || !hero || hero.querySelector(".cinematic-media")) return;
-
-    hero.classList.add("cinematic-hero");
-    const poster = resolveAsset(scene.poster);
-    const video = resolveAsset(scene.video);
-    hero.style.setProperty("--scene-position", scene.position);
-
-    const media = document.createElement("div");
-    media.className = "cinematic-media";
-    media.dataset.motionFrame = "";
-    media.setAttribute("aria-hidden", "true");
-    media.style.backgroundImage = `url("${poster}")`;
-    media.innerHTML = `
-      <video muted loop playsinline preload="none" poster="${poster}" tabindex="-1">
-        <source data-src="${video}" type="video/mp4">
-      </video>
-      <div class="cinematic-shade"></div>
-      <div class="cinematic-grain"></div>
-    `;
-
-    const meta = document.createElement("div");
-    meta.className = "cinematic-meta";
-    meta.innerHTML = `
-      <span class="concept-label">Kavramsal görselleştirme</span>
-      <button class="motion-toggle" type="button" aria-pressed="true">Hareketi oynat</button>
-    `;
-
-    hero.prepend(media);
-    hero.append(meta);
-  };
-
-  createCinematicHero();
 
   const header = document.querySelector(".site-header");
   const menuButton = document.querySelector(".menu-toggle");
