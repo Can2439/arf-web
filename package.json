@@ -1,7 +1,0 @@
-{
-  "name": "arf-corporate-site",
-  "private": true,
-  "scripts": {
-    "dev": "node preview-server.cjs"
-  }
-}
