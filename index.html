@@ -62,18 +62,6 @@
           linear-gradient(180deg, rgba(0, 0, 0, 0.08), transparent 16%, transparent 82%, rgba(0, 0, 0, 0.14));
       }
 
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-      }
-
       @media (max-aspect-ratio: 4 / 3) {
         .film {
           object-fit: contain;
@@ -105,11 +93,10 @@
       preload="auto"
       disablepictureinpicture
       disableremoteplayback
-      aria-label="ARF İleri Teknoloji kapanış filmi"
+      aria-label="ARF İleri Teknoloji arşiv kapanışı"
     >
-      <source src="/arf-closure.mp4" type="video/mp4">
+      <source src="/arf-archive.mp4" type="video/mp4">
     </video>
     <div class="shade" aria-hidden="true"></div>
-    <p class="sr-only">ARF İleri Teknoloji başaramadı.</p>
   </body>
 </html>
