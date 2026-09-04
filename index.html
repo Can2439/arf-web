@@ -98,5 +98,15 @@
       <source src="/arf-archive.mp4" type="video/mp4">
     </video>
     <div class="shade" aria-hidden="true"></div>
+    <script>
+      const film = document.querySelector(".film");
+
+      film.addEventListener("ended", () => {
+        window.setTimeout(() => {
+          film.currentTime = 0;
+          film.play().catch(() => {});
+        }, 5000);
+      });
+    </script>
   </body>
 </html>
