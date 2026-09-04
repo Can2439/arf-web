@@ -10,6 +10,9 @@
     <style>
       :root {
         color-scheme: dark;
+        --ink: #050608;
+        --red: #e84f55;
+        --duration: 14s;
       }
 
       * {
@@ -22,7 +25,7 @@
         height: 100%;
         margin: 0;
         overflow: hidden;
-        background: #050608;
+        background: var(--ink);
       }
 
       body {
@@ -37,184 +40,293 @@
         z-index: -3;
         inset: 0;
         background:
-          radial-gradient(circle at 50% 46%, rgba(255, 255, 255, 0.98) 0 18%, rgba(245, 245, 244, 0.96) 42%, rgba(225, 225, 224, 0.92) 100%),
-          #f3f3f2;
-        transform: scale(1.04);
-        animation: ambient-power 18s linear infinite;
+          radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.07), transparent 28%),
+          radial-gradient(circle at 43% 50%, rgba(232, 79, 85, 0.09), transparent 18%),
+          linear-gradient(180deg, #0b0c0f 0%, #050608 68%);
+        animation: room-power var(--duration) cubic-bezier(0.4, 0, 0.2, 1) forwards;
       }
 
       body::after {
         content: "";
         position: fixed;
-        z-index: 6;
+        z-index: 8;
         inset: 0;
         pointer-events: none;
-        background:
-          radial-gradient(circle at 50% 50%, transparent 18%, rgba(0, 0, 0, 0.18) 62%, rgba(0, 0, 0, 0.72) 125%),
-          repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0 1px, transparent 1px 4px);
-        opacity: 0;
-        animation: vignette-in 18s linear infinite;
+        background: radial-gradient(circle at 50% 48%, transparent 12%, rgba(0, 0, 0, 0.32) 65%, rgba(0, 0, 0, 0.76) 125%);
+        opacity: 0.42;
+        animation: vignette var(--duration) ease-out forwards;
       }
 
-      .stage {
-        position: relative;
-        width: min(78vw, 426px);
-        aspect-ratio: 284 / 71;
+      .grid {
+        position: fixed;
+        z-index: -2;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+        background-size: 72px 72px;
+        -webkit-mask-image: radial-gradient(circle at 50% 50%, black, transparent 72%);
+        mask-image: radial-gradient(circle at 50% 50%, black, transparent 72%);
+        opacity: 0;
+        animation: grid-state var(--duration) ease forwards;
+      }
+
+      .scene {
+        width: min(82vw, 420px);
         display: grid;
-        place-items: center;
-        isolation: isolate;
+        justify-items: center;
+        gap: clamp(24px, 4vw, 34px);
       }
 
-      .stage::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        width: 30%;
-        aspect-ratio: 1;
-        left: 0;
-        top: 50%;
-        translate: -4% -50%;
-        border-radius: 50%;
-        background: rgba(226, 57, 66, 0.42);
-        filter: blur(34px);
+      .plate {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: clamp(17px, 4.4vw, 24px) clamp(20px, 5vw, 28px);
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: 3px;
+        background: #ffffff;
+        box-shadow:
+          0 30px 80px rgba(0, 0, 0, 0.42),
+          0 0 0 1px rgba(0, 0, 0, 0.03),
+          0 0 42px rgba(232, 79, 85, 0.08);
         opacity: 0;
-        animation: red-core 18s linear infinite;
+        transform: translateY(5px) scale(0.992);
+        animation: plate-state var(--duration) cubic-bezier(0.4, 0, 0.2, 1) forwards;
       }
 
-      .stage::after {
+      .plate::before {
         content: "";
         position: absolute;
-        z-index: 4;
-        inset: -10%;
-        background: linear-gradient(90deg, transparent 0 46%, rgba(5, 6, 8, 0.94) 54% 100%);
+        z-index: 2;
+        top: -110%;
+        bottom: -110%;
+        left: -55%;
+        width: 34%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.68), transparent);
+        transform: skewX(-14deg);
         opacity: 0;
-        transform: translateX(-105%);
-        animation: shutdown-sweep 18s cubic-bezier(0.72, 0, 0.28, 1) infinite;
+        animation: inspection-light var(--duration) cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+      }
+
+      .plate::after {
+        content: "";
+        position: absolute;
+        z-index: 3;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(5, 6, 8, 0.94), rgba(5, 6, 8, 0.985));
+        transform: scaleX(0);
+        transform-origin: right center;
+        animation: power-shutter var(--duration) cubic-bezier(0.74, 0, 0.26, 1) forwards;
       }
 
       .logo {
+        position: relative;
+        z-index: 1;
         width: 100%;
         height: auto;
         display: block;
+        filter: saturate(1) contrast(1);
+        animation: logo-state var(--duration) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+
+      .energy {
+        position: relative;
+        width: 72%;
+        height: 1px;
+        overflow: visible;
+        background: rgba(255, 255, 255, 0.13);
         opacity: 0;
-        transform: translateY(0) scale(0.985);
-        filter: grayscale(0) brightness(1) drop-shadow(0 0 0 rgba(226, 57, 66, 0));
-        animation: logo-failure 18s linear infinite;
-        will-change: opacity, filter, transform;
+        animation: track-state var(--duration) linear forwards;
       }
 
-      @keyframes ambient-power {
-        0%, 5% { opacity: 0; }
-        12%, 27% { opacity: 1; }
-        28% { opacity: 0.68; }
-        29% { opacity: 1; }
-        31% { opacity: 0.34; }
-        32% { opacity: 0.96; }
-        35% { opacity: 0.18; }
-        37% { opacity: 0.72; }
-        42% { opacity: 0.12; }
-        48%, 100% { opacity: 0; }
+      .energy::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(232, 79, 85, 0.24), var(--red));
+        box-shadow: 0 0 12px rgba(232, 79, 85, 0.4);
+        transform: scaleX(0);
+        transform-origin: left center;
+        animation: energy-drain var(--duration) cubic-bezier(0.4, 0, 0.2, 1) forwards;
       }
 
-      @keyframes vignette-in {
-        0%, 24% { opacity: 0; }
-        34% { opacity: 0.2; }
-        48% { opacity: 0.72; }
-        65%, 100% { opacity: 1; }
+      .energy::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -2px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--red);
+        box-shadow: 0 0 12px rgba(232, 79, 85, 0.78);
+        opacity: 0;
+        transform: translateY(-50%);
+        animation: terminal-light var(--duration) linear forwards;
       }
 
-      @keyframes red-core {
-        0%, 8% { opacity: 0; transform: scale(0.72); }
-        14%, 25% { opacity: 0.74; transform: scale(1); }
-        28% { opacity: 0.2; }
-        29% { opacity: 0.82; }
-        31% { opacity: 0.12; }
-        32% { opacity: 0.66; }
-        38% { opacity: 0.3; }
-        48% { opacity: 0.08; transform: scale(0.8); }
-        58%, 100% { opacity: 0; transform: scale(0.42); }
+      @keyframes room-power {
+        0%, 8% { filter: brightness(0.58); }
+        18%, 43% { filter: brightness(1); }
+        47% { filter: brightness(0.82); }
+        48% { filter: brightness(1); }
+        55% { filter: brightness(0.9); }
+        72% { filter: brightness(0.34); }
+        100% { filter: brightness(0.18); }
       }
 
-      @keyframes shutdown-sweep {
-        0%, 36% { opacity: 0; transform: translateX(-105%); }
-        42% { opacity: 0.28; }
-        55% { opacity: 0.8; transform: translateX(45%); }
-        68%, 100% { opacity: 0; transform: translateX(110%); }
+      @keyframes vignette {
+        0%, 44% { opacity: 0.42; }
+        72% { opacity: 0.72; }
+        100% { opacity: 0.9; }
       }
 
-      @keyframes logo-failure {
-        0%, 5% {
+      @keyframes grid-state {
+        0%, 10% { opacity: 0; }
+        22%, 48% { opacity: 1; }
+        68% { opacity: 0.3; }
+        100% { opacity: 0.08; }
+      }
+
+      @keyframes plate-state {
+        0%, 8% {
           opacity: 0;
-          transform: translateY(0) scale(0.985);
-          filter: grayscale(0.3) brightness(0.58) drop-shadow(0 0 0 rgba(226, 57, 66, 0));
+          transform: translateY(5px) scale(0.992);
+          box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
         }
-        12%, 26% {
+        18%, 44% {
           opacity: 1;
           transform: translateY(0) scale(1);
-          filter: grayscale(0) brightness(1) drop-shadow(0 0 18px rgba(226, 57, 66, 0.18));
+          box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.42),
+            0 0 0 1px rgba(0, 0, 0, 0.03),
+            0 0 42px rgba(232, 79, 85, 0.08);
         }
-        28% { opacity: 0.5; filter: grayscale(0.08) brightness(0.78); }
-        29% { opacity: 1; filter: grayscale(0) brightness(1.03); }
-        31% { opacity: 0.24; filter: grayscale(0.38) brightness(0.62); }
-        32% { opacity: 0.92; filter: grayscale(0.04) brightness(0.94); }
-        35% { opacity: 0.34; filter: grayscale(0.55) brightness(0.56); }
-        37% { opacity: 0.76; filter: grayscale(0.18) brightness(0.82); }
-        45% {
-          opacity: 0.5;
-          transform: translateY(1px) scale(0.998);
-          filter: grayscale(0.52) brightness(0.62) drop-shadow(0 0 8px rgba(226, 57, 66, 0.08));
-        }
-        58% {
-          opacity: 0.2;
-          transform: translateY(4px) scale(0.994);
-          filter: grayscale(0.88) brightness(0.42) drop-shadow(0 0 0 rgba(226, 57, 66, 0));
-        }
-        72%, 92% {
-          opacity: 0.07;
-          transform: translateY(6px) scale(0.99);
-          filter: grayscale(1) brightness(0.3);
+        47% { opacity: 0.72; }
+        48% { opacity: 1; }
+        51% { opacity: 0.88; }
+        52% { opacity: 1; }
+        62% { opacity: 0.94; }
+        76% {
+          opacity: 0.22;
+          transform: translateY(2px) scale(0.998);
+          box-shadow: 0 24px 58px rgba(0, 0, 0, 0.28);
         }
         100% {
-          opacity: 0;
-          transform: translateY(6px) scale(0.99);
-          filter: grayscale(1) brightness(0.24);
+          opacity: 0.11;
+          transform: translateY(3px) scale(0.996);
+          box-shadow: 0 18px 44px rgba(0, 0, 0, 0.2);
         }
       }
 
-      @media (max-width: 420px) {
-        .stage {
-          width: 82vw;
+      @keyframes inspection-light {
+        0%, 20% { left: -55%; opacity: 0; }
+        24% { opacity: 0.5; }
+        38% { left: 122%; opacity: 0; }
+        100% { left: 122%; opacity: 0; }
+      }
+
+      @keyframes power-shutter {
+        0%, 58% { opacity: 1; transform: scaleX(0); }
+        76% { opacity: 1; transform: scaleX(1); }
+        84%, 100% { opacity: 0; transform: scaleX(1); }
+      }
+
+      @keyframes logo-state {
+        0%, 43% { filter: saturate(1) grayscale(0) brightness(1); }
+        47% { filter: saturate(0.72) grayscale(0.12) brightness(0.78); }
+        48% { filter: saturate(1) grayscale(0) brightness(1); }
+        58% { filter: saturate(0.82) grayscale(0.18) brightness(0.9); }
+        72% { filter: saturate(0.18) grayscale(0.82) brightness(0.46); }
+        100% { filter: saturate(0) grayscale(1) brightness(0.3); }
+      }
+
+      @keyframes track-state {
+        0%, 18% { opacity: 0; }
+        24%, 61% { opacity: 1; }
+        76%, 100% { opacity: 0; }
+      }
+
+      @keyframes energy-drain {
+        0%, 22% { transform: scaleX(0); transform-origin: left center; }
+        30%, 48% { transform: scaleX(1); transform-origin: left center; }
+        51% { transform: scaleX(0.96); transform-origin: right center; }
+        69%, 100% { transform: scaleX(0); transform-origin: right center; }
+      }
+
+      @keyframes terminal-light {
+        0%, 28% { opacity: 0; }
+        31%, 49% { opacity: 1; }
+        51% { opacity: 0.28; }
+        52% { opacity: 1; }
+        58% { opacity: 0.62; }
+        61% { opacity: 0.16; }
+        64% { opacity: 0.48; }
+        69%, 100% { opacity: 0; }
+      }
+
+      @media (max-width: 480px) {
+        .scene {
+          width: min(86vw, 380px);
+        }
+
+        .grid {
+          background-size: 52px 52px;
         }
       }
 
       @media (prefers-reduced-motion: reduce) {
         body::before {
-          opacity: 0;
+          filter: brightness(0.2);
           animation: none;
         }
 
         body::after {
-          opacity: 1;
+          opacity: 0.9;
           animation: none;
         }
 
-        .stage::before,
-        .stage::after {
+        .grid {
+          opacity: 0.08;
+          animation: none;
+        }
+
+        .plate {
+          opacity: 0.11;
+          transform: none;
+          box-shadow: none;
+          animation: none;
+        }
+
+        .plate::before {
           display: none;
         }
 
-        .logo {
-          opacity: 0.18;
-          transform: none;
-          filter: grayscale(1) brightness(0.4);
+        .plate::after {
+          transform: scaleX(1);
           animation: none;
+        }
+
+        .logo {
+          filter: grayscale(1) brightness(0.3);
+          animation: none;
+        }
+
+        .energy {
+          display: none;
         }
       }
     </style>
   </head>
   <body>
-    <main class="stage" aria-label="ARF İleri Teknoloji">
-      <img class="logo" src="/arf-logo.png" width="284" height="71" alt="ARF İleri Teknoloji">
+    <div class="grid" aria-hidden="true"></div>
+    <main class="scene" aria-label="ARF İleri Teknoloji">
+      <div class="plate">
+        <img class="logo" src="/arf-logo.png" width="284" height="71" alt="ARF İleri Teknoloji">
+      </div>
+      <div class="energy" aria-hidden="true"></div>
     </main>
   </body>
 </html>
