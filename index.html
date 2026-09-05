@@ -1,112 +1,582 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#020304">
-    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <title></title>
-    <style>
-      :root {
-        color-scheme: dark;
-        background: #020304;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        overflow: hidden;
-        background: #020304;
-      }
-
-      body {
-        display: grid;
-        place-items: center;
-        isolation: isolate;
-      }
-
-      .fallback {
-        position: fixed;
-        z-index: -2;
-        width: min(58vw, 360px);
-        height: auto;
-        opacity: 0.09;
-        filter: grayscale(1) brightness(0.55);
-      }
-
-      .film {
-        position: fixed;
-        z-index: -1;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
-        object-position: center;
-        background: #020304;
-      }
-
-      .shade {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        background:
-          radial-gradient(circle at 50% 48%, transparent 54%, rgba(0, 0, 0, 0.18) 82%, rgba(0, 0, 0, 0.48) 130%),
-          linear-gradient(180deg, rgba(0, 0, 0, 0.08), transparent 16%, transparent 82%, rgba(0, 0, 0, 0.14));
-      }
-
-      @media (max-aspect-ratio: 4 / 3) {
-        .film {
-          object-fit: contain;
-        }
-
-        .shade {
-          background: radial-gradient(circle at 50% 50%, transparent 42%, rgba(0, 0, 0, 0.2) 82%, rgba(0, 0, 0, 0.48) 130%);
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .film {
-          display: none;
-        }
-
-        .fallback {
-          opacity: 0.15;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <img class="fallback" src="/arf-logo.png" width="284" height="71" alt="">
-    <video
-      class="film"
-      autoplay
-      muted
-      playsinline
-      preload="auto"
-      disablepictureinpicture
-      disableremoteplayback
-      aria-label="ARF İleri Teknoloji arşiv kapanışı"
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ARF İleri Teknoloji | Güç Elektroniği, Edge AI ve Dayanıklı Sistemler</title>
+    <meta
+      name="description"
+      content="ARF İleri Teknoloji; güç elektroniği, Edge AI ve savunma standartlarında sistem mühendisliğini aynı mimaride birleştiren ileri teknoloji şirketidir."
     >
-      <source src="/arf-archive.mp4" type="video/mp4">
-    </video>
-    <div class="shade" aria-hidden="true"></div>
-    <script>
-      const film = document.querySelector(".film");
-
-      film.addEventListener("ended", () => {
-        window.setTimeout(() => {
-          film.currentTime = 0;
-          film.play().catch(() => {});
-        }, 5000);
-      });
+    <link rel="canonical" href="https://arftech.tr/">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta name="theme-color" content="#f3f3f0">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="ARF İleri Teknoloji">
+    <meta property="og:title" content="ARF İleri Teknoloji — Powering the Future">
+    <meta
+      property="og:description"
+      content="Güç elektroniğini, Edge AI'ı ve dayanıklı sistem mühendisliğini aynı çekirdekte birleştiriyoruz."
+    >
+    <meta property="og:url" content="https://arftech.tr/">
+    <meta property="og:image" content="https://arftech.tr/assets/media/v6/arf-protected-core-scroll.webp">
+    <link
+      rel="preload"
+      href="assets/media/v6/arf-protected-core-scroll.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-v4.css?v=20260726-1">
+    <link rel="stylesheet" href="styles-v7.css?v=20260729-1">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ARF İleri Teknoloji",
+        "url": "https://arftech.tr/",
+        "logo": "https://arftech.tr/assets/brand/arf-logo.png",
+        "description": "Güç elektroniği, Edge AI ve savunma standartlarında sistem mühendisliğini aynı mimaride birleştiren ileri teknoloji şirketi.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Pendik",
+          "addressRegion": "İstanbul",
+          "addressCountry": "TR"
+        }
+      }
     </script>
+  </head>
+  <body class="cinematic-site home-v7 brand-v7">
+    <a class="skip-link" href="#main">İçeriğe geç</a>
+
+    <header class="story-header" data-story-header>
+      <div class="story-header-inner">
+        <a class="story-brand" href="index.html" aria-label="ARF İleri Teknoloji ana sayfa">
+          <img
+            class="story-brand-horizontal"
+            src="assets/brand/arf-logo.png"
+            width="1200"
+            height="260"
+            alt="ARF İleri Teknoloji"
+          >
+          <img
+            class="story-brand-compact"
+            src="assets/brand/arf-mark.png"
+            width="512"
+            height="512"
+            alt=""
+          >
+        </a>
+
+        <button
+          class="story-menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="story-nav"
+        >
+          <span></span>
+          <span></span>
+          <span class="sr-only">Menüyü aç</span>
+        </button>
+
+        <nav class="story-nav" id="story-nav" aria-label="Ana menü">
+          <a href="#misyon">Misyonumuz</a>
+          <a href="#teknolojik-odak">Teknolojik Odak</a>
+          <a href="#teknik-yazilar">Teknik Yazılar</a>
+          <a class="story-nav-cta" href="#iletisim">İletişim <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section
+        class="scroll-scene hero-story"
+        id="baslangic"
+        data-scroll-scene="core"
+        aria-labelledby="hero-title"
+      >
+        <div class="story-sticky">
+          <div class="hero-story-media" aria-hidden="true">
+            <video
+              class="story-scrub-video"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="assets/media/v6/arf-protected-core-scroll.webp"
+              data-scrub-video
+            >
+              <source src="assets/media/v6/arf-protected-core-scroll.mp4" type="video/mp4">
+            </video>
+            <div class="story-media-shade"></div>
+            <div class="story-field-lines"></div>
+          </div>
+
+          <div class="story-shell hero-story-layout">
+            <div class="hero-story-copy">
+              <p class="story-eyebrow">ARF İLERİ TEKNOLOJİ</p>
+              <p class="brand-signature">POWERING THE FUTURE</p>
+              <h1 id="hero-title">Enerjinin zekâ ile buluştuğu mühendislik çekirdeği.</h1>
+              <p class="hero-story-lead">
+                Güç elektroniğini, Edge AI’ı ve dayanıklı sistem mühendisliğini
+                aynı çekirdekte birleştiriyoruz.
+              </p>
+              <div class="story-actions">
+                <a class="story-button story-button-primary" href="#mihenk-taslari">
+                  Teknolojiyi Keşfet <span aria-hidden="true">↓</span>
+                </a>
+                <a class="story-button story-button-ghost" href="#iletisim">
+                  Bizimle İletişime Geç <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="hero-story-status" aria-hidden="true">
+              <span>01 / Enerji çekirdeği</span>
+              <i></i>
+              <small>Kaydırarak sistemi açın</small>
+            </div>
+          </div>
+
+          <div class="scene-progress" aria-hidden="true">
+            <i></i>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scroll-scene split-story"
+        id="mihenk-taslari"
+        data-scroll-scene="split"
+        aria-labelledby="split-title"
+      >
+        <div class="story-sticky split-stage">
+          <div class="split-media split-core-media" aria-hidden="true">
+            <video
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="assets/media/v6/arf-protected-core-scroll.webp"
+              data-split-video="core"
+            >
+              <source src="assets/media/v6/arf-protected-core-scroll.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="split-media split-backbone-media" aria-hidden="true">
+            <video
+              muted
+              loop
+              playsinline
+              preload="none"
+              poster="assets/media/v6/arf-balanced-backbone-scroll.webp"
+              data-split-video="backbone"
+            >
+              <source data-src="assets/media/v6/arf-balanced-backbone-scroll.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="split-atmosphere" aria-hidden="true"></div>
+          <div class="energy-seam" aria-hidden="true"><i></i></div>
+
+          <div class="story-shell split-story-layout">
+            <div class="split-intro">
+              <p class="story-eyebrow">02 / İki mihenk taşı</p>
+              <h2 id="split-title">Tek çekirdek.<br>İki tamamlayıcı eksen.</h2>
+            </div>
+
+            <article class="pillar-copy pillar-core">
+              <span>01</span>
+              <div>
+                <p class="pillar-kicker">Gücü dönüştür / koru</p>
+                <h3>Korunan Enerji Çekirdeği</h3>
+                <p>
+                  SiC/GaN tabanlı yüksek verimli güç dönüşümü, koruma,
+                  termal güvenlik ve dayanıklı donanım mimarisi.
+                </p>
+              </div>
+            </article>
+
+            <article class="pillar-copy pillar-backbone">
+              <span>02</span>
+              <div>
+                <p class="pillar-kicker">Ölç / yorumla / öngör</p>
+                <h3>Dengelenen Enerji Omurgası</h3>
+                <p>
+                  Sensör verilerini Edge AI ile işleyen; güç elektroniği ve
+                  inverter sağlığını izleyerek kestirimci bakım kararlarını
+                  destekleyen adaptif sistem mimarisi.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="scene-progress" aria-hidden="true"><i></i></div>
+        </div>
+      </section>
+
+      <section
+        class="scroll-scene architecture-story"
+        id="mimari"
+        data-scroll-scene="architecture"
+        aria-labelledby="architecture-title"
+      >
+        <div class="story-sticky architecture-stage">
+          <div class="architecture-background" aria-hidden="true">
+            <video
+              muted
+              loop
+              playsinline
+              preload="none"
+              poster="assets/media/v6/arf-protected-core-scroll.webp"
+              data-architecture-video
+            >
+              <source data-src="assets/media/v6/arf-protected-core-scroll.mp4" type="video/mp4">
+            </video>
+            <div></div>
+          </div>
+
+          <div class="story-shell architecture-layout">
+            <div class="architecture-copy">
+              <p class="story-eyebrow">03 / Sistem mimarisi</p>
+              <h2 id="architecture-title">Enerji çekirdeği,<br>dört mühendislik katmanına açılır.</h2>
+              <p>
+                Her katman aynı fiziksel sistemin parçasıdır; güç akışından
+                saha entegrasyonuna kadar doğrulanabilir bir mühendislik zinciri kurar.
+              </p>
+              <div class="architecture-counter" aria-hidden="true">
+                <span data-layer-count>01</span>
+                <i></i>
+                <small>04</small>
+              </div>
+            </div>
+
+            <ol class="architecture-stack" aria-label="ARF sistem mimarisi katmanları">
+              <li class="architecture-layer is-active" data-layer-index="0">
+                <span>01</span>
+                <div>
+                  <h3>Güç Dönüşümü</h3>
+                  <p>SiC/GaN anahtarlama, sürme, koruma ve termal tasarım.</p>
+                </div>
+              </li>
+              <li class="architecture-layer" data-layer-index="1">
+                <span>02</span>
+                <div>
+                  <h3>Ölçüm ve Gerçek Zamanlı İzleme</h3>
+                  <p>Elektriksel ve termal davranışın güvenilir veri katmanına dönüşmesi.</p>
+                </div>
+              </li>
+              <li class="architecture-layer" data-layer-index="2">
+                <span>03</span>
+                <div>
+                  <h3>Edge AI ve Kestirimci Analiz</h3>
+                  <p>Güç elektroniği ve inverter sağlığı için uçta anomali değerlendirmesi.</p>
+                </div>
+              </li>
+              <li class="architecture-layer" data-layer-index="3">
+                <span>04</span>
+                <div>
+                  <h3>Savunma Standartlarında Sistem Entegrasyonu</h3>
+                  <p>Zorlu çevre, güç kalitesi ve elektromanyetik uyumluluk bağlamında bütünleşme.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="scene-progress" aria-hidden="true"><i></i></div>
+        </div>
+      </section>
+
+      <section
+        class="focus-modules"
+        id="teknolojik-odak"
+        data-nav-tone="light"
+        aria-labelledby="focus-title"
+      >
+        <div class="story-shell focus-heading" data-enter>
+          <p class="story-eyebrow">Teknolojik odak</p>
+          <h2 id="focus-title">Üç disiplin.<br>Tek sistem vizyonu.</h2>
+          <p>
+            Enerjiyi dönüştüren donanım, onu yorumlayan uç zekâ ve zorlu
+            uygulamalara taşıyan sistem mühendisliği birlikte ele alınır.
+          </p>
+        </div>
+
+        <div class="focus-module-list">
+          <article class="focus-module" data-focus-module data-enter>
+            <div class="story-shell focus-module-inner">
+              <div class="focus-module-copy">
+                <span>01 / Donanım çekirdeği</span>
+                <h3>Güç<br>Elektroniği</h3>
+                <p>
+                  Yüksek anahtarlama hızını; koruma, termal yol, sürme mimarisi
+                  ve elektromanyetik uyumlulukla birlikte tasarlıyoruz.
+                </p>
+                <a href="teknoloji-alanlari.html">
+                  Teknoloji yaklaşımı <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <div class="focus-module-media" aria-hidden="true">
+                <video
+                  muted
+                  loop
+                  playsinline
+                  preload="none"
+                  poster="assets/media/v6/arf-protected-core-scroll.webp"
+                  data-lazy-video
+                >
+                  <source data-src="assets/media/v6/arf-protected-core-scroll.mp4" type="video/mp4">
+                </video>
+                <div class="focus-edge-map"></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="focus-module focus-module-reverse" data-focus-module data-enter>
+            <div class="story-shell focus-module-inner">
+              <div class="focus-module-copy">
+                <span>02 / Uçta karar katmanı</span>
+                <h3>Edge<br>AI</h3>
+                <p>
+                  Sensör verisini kaynağında işleyerek güç elektroniği ve
+                  inverter davranışındaki sapmaları bakım kararlarını destekleyen
+                  bir bilgi katmanına dönüştürüyoruz.
+                </p>
+                <a href="arastirma-ip.html">
+                  Araştırma yaklaşımı <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <div class="focus-module-media" aria-hidden="true">
+                <video
+                  muted
+                  loop
+                  playsinline
+                  preload="none"
+                  poster="assets/media/v6/arf-balanced-backbone-scroll.webp"
+                  data-lazy-video
+                >
+                  <source data-src="assets/media/v6/arf-balanced-backbone-scroll.mp4" type="video/mp4">
+                </video>
+                <div class="focus-edge-map"></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="focus-module focus-module-defense" data-focus-module data-enter>
+            <div class="story-shell focus-module-inner">
+              <div class="focus-module-copy">
+                <span>03 / Dayanıklı bütünleşme</span>
+                <h3>Savunma<br>Standartları</h3>
+                <p>
+                  Sistem mimarisini çevresel koşullar, 28 V güç altyapıları,
+                  EMI/EMC disiplini ve doğrulama bağlamıyla birlikte kuruyoruz.
+                </p>
+                <a href="mil-std-810h.html">
+                  Doğrulama yaklaşımı <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <div class="focus-module-media defense-field" aria-hidden="true">
+                <div class="defense-grid"></div>
+                <div class="defense-core"></div>
+                <div class="defense-pulse"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="mission-section" id="misyon" data-nav-tone="light">
+        <div class="story-shell mission-layout">
+          <div data-enter>
+            <p class="story-eyebrow">Misyonumuz</p>
+            <h2>Enerjiyi yalnızca yönetmek değil; güvenilir bir sistem bilgisine dönüştürmek.</h2>
+          </div>
+          <div class="mission-copy" data-enter>
+            <p class="mission-lead">
+              ARF İleri Teknoloji, güç elektroniği donanımı ile Edge AI
+              tabanlı izlemeyi aynı mühendislik mimarisinde buluşturur.
+            </p>
+            <p>
+              Teknik kapsamımız, sistemin tamamına ilişkin doğrulanmamış teşhis
+              iddiaları üretmek değil; güç elektroniği ve inverterin kendi
+              elektriksel ve termal davranışını izleyerek daha erken ve daha
+              nitelikli bakım kararlarını desteklemektir.
+            </p>
+            <a href="kurumsal.html">Kurumsal yaklaşımımız <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <ol class="story-shell mission-principles">
+          <li data-enter>
+            <span>01</span>
+            <strong>Bilimsel derinlik</strong>
+            <p>Ölçülebilir problem, kaynaklı yöntem ve doğrulanabilir mühendislik.</p>
+          </li>
+          <li data-enter>
+            <span>02</span>
+            <strong>Endüstriyel karşılık</strong>
+            <p>Aktarılabilir mimari, gerçek saha kısıtları ve bütünleşme disiplini.</p>
+          </li>
+          <li data-enter>
+            <span>03</span>
+            <strong>Fikrî değer</strong>
+            <p>Uzun vadede korunabilir, lisanslanabilir ve çoğaltılabilir teknoloji temeli.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section
+        class="technical-notes"
+        id="teknik-yazilar"
+        data-nav-tone="light"
+        aria-labelledby="notes-title"
+      >
+        <div class="story-shell notes-heading" data-enter>
+          <div>
+            <p class="story-eyebrow">Teknik yazılar</p>
+            <h2 id="notes-title">Mühendislik kararlarının arka planı.</h2>
+          </div>
+          <a href="yazilar.html">Tüm yazılar <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="story-shell note-list">
+          <a class="technical-note" href="arf-insight-layout.html" data-enter>
+            <span class="technical-note-index">01</span>
+            <div>
+              <p class="technical-note-meta">
+                <span>Mühendislik notu</span>
+                <time datetime="2026-02-17">17 Şubat 2026</time>
+              </p>
+              <h3>Yüksek hızlı anahtarlamada yerleşim bir sistem problemidir</h3>
+              <p>Parazitik etkiler, akım çevrimleri ve ölçüm disiplinine giriş.</p>
+            </div>
+            <strong aria-hidden="true">↗</strong>
+          </a>
+
+          <a class="technical-note" href="mil-std-810h.html" data-enter>
+            <span class="technical-note-index">02</span>
+            <div>
+              <p class="technical-note-meta">
+                <span>Doğrulama yaklaşımı</span>
+                <time datetime="2026-02-15">15 Şubat 2026</time>
+              </p>
+              <h3>Çevresel testlerde bağlam ve uyarlama</h3>
+              <p>Standart maddelerini gerçek kullanım profili ve görev koşullarıyla ilişkilendirmek.</p>
+            </div>
+            <strong aria-hidden="true">↗</strong>
+          </a>
+
+          <a class="technical-note" href="sic-termal-analiz.html" data-enter>
+            <span class="technical-note-index">03</span>
+            <div>
+              <p class="technical-note-meta">
+                <span>Termal tasarım</span>
+                <time datetime="2026-02-17">17 Şubat 2026</time>
+              </p>
+              <h3>Isı yolunu erken aşamada kurmak</h3>
+              <p>SiC tabanlı güç katlarında termal yolun mimari kararlarla birlikte ele alınması.</p>
+            </div>
+            <strong aria-hidden="true">↗</strong>
+          </a>
+        </div>
+      </section>
+
+      <section
+        class="scroll-scene final-story"
+        data-scroll-scene="final"
+        aria-labelledby="final-title"
+      >
+        <span class="final-contact-anchor" id="iletisim" aria-hidden="true"></span>
+        <div class="story-sticky final-stage">
+          <div class="final-energy final-energy-core" aria-hidden="true">
+            <video
+              muted
+              loop
+              playsinline
+              preload="none"
+              poster="assets/media/v6/arf-protected-core-scroll.webp"
+              data-final-video
+            >
+              <source data-src="assets/media/v6/arf-protected-core-scroll.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="final-energy final-energy-backbone" aria-hidden="true">
+            <video
+              muted
+              loop
+              playsinline
+              preload="none"
+              poster="assets/media/v6/arf-balanced-backbone-scroll.webp"
+              data-final-video
+            >
+              <source data-src="assets/media/v6/arf-balanced-backbone-scroll.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="final-convergence" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="final-shade" aria-hidden="true"></div>
+
+          <div class="story-shell final-content">
+            <img
+              class="final-logo"
+              src="assets/brand/arf-logo.png"
+              width="1200"
+              height="260"
+              alt="ARF İleri Teknoloji"
+            >
+            <p class="brand-signature">POWERING THE FUTURE</p>
+            <h2 id="final-title">
+              Enerjiyi yalnızca dönüştürmüyoruz. Onu koruyan, anlayan ve
+              geleceğe hazırlayan sistemler geliştiriyoruz.
+            </h2>
+            <a class="story-button story-button-primary" href="mailto:info@arftech.tr">
+              Birlikte Geliştirelim <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="scene-progress" aria-hidden="true"><i></i></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="story-footer">
+      <div class="story-shell story-footer-grid">
+        <div>
+          <img
+            src="assets/brand/arf-logo.png"
+            width="1200"
+            height="260"
+            alt="ARF İleri Teknoloji"
+          >
+          <p>POWERING THE FUTURE</p>
+        </div>
+        <div>
+          <strong>Konum</strong>
+          <span>Teknopark İstanbul</span>
+          <span>Pendik, İstanbul / Türkiye</span>
+        </div>
+        <div>
+          <strong>Ekosistem</strong>
+          <span>SAYZEK Ekosistem Üyesi</span>
+          <a href="mailto:info@arftech.tr">info@arftech.tr</a>
+        </div>
+      </div>
+      <div class="story-shell story-footer-bottom">
+        <span>© <span data-year>2026</span> ARF İLERİ TEKNOLOJİ</span>
+        <nav aria-label="Alt menü">
+          <a href="kurumsal.html">Kurumsal</a>
+          <a href="teknoloji-alanlari.html">Teknoloji Alanları</a>
+          <a href="arastirma-ip.html">Araştırma &amp; IP</a>
+          <a href="yazilar.html">Çalışmalar</a>
+        </nav>
+      </div>
+    </footer>
+
+    <noscript>
+      <div class="story-noscript">
+        Bu sayfanın sinematik hareketleri için JavaScript gerekir; tüm içerik
+        hareket olmadan da yukarıda erişilebilir durumdadır.
+      </div>
+    </noscript>
+    <script src="script-v6.js?v=20260729-2"></script>
   </body>
 </html>

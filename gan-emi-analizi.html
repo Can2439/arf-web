@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EMI Analizinde Kaynak, Yol ve Alıcı | ARF Araştırma Notu</title>
+    <meta name="description" content="Güç elektroniğinde elektromanyetik girişimi kaynak, kuplaj yolu ve alıcı üzerinden değerlendiren sistem yaklaşımı.">
+    <link rel="canonical" href="https://arftech.tr/gan-emi-analizi.html">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta name="theme-color" content="#f3f3f0">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="ARF İleri Teknoloji">
+    <meta property="og:title" content="EMI Analizinde Kaynak, Yol ve Alıcı | ARF Araştırma Notu">
+    <meta property="og:description" content="Güç elektroniğinde elektromanyetik girişimi kaynak, kuplaj yolu ve alıcı üzerinden değerlendiren sistem yaklaşımı.">
+    <meta property="og:url" content="https://arftech.tr/gan-emi-analizi.html">
+    <meta property="og:image" content="https://arftech.tr/assets/media/v6/arf-balanced-backbone-scroll.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-v4.css?v=20260726-1">
+    <link rel="stylesheet" href="styles-v7.css?v=20260729-1">
+  </head>
+  <body class="cinematic-site article-v4 brand-v7" data-scene="research">
+    <a class="skip-link" href="#main">İçeriğe geç</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand brand-modern" href="index.html" aria-label="ARF İleri Teknoloji ana sayfa"><span class="brand-mark-wrap"><img class="brand-mark" src="assets/brand/arf-mark.png" width="512" height="512" alt=""></span><span class="brand-type"><strong>ARF</strong><small>İleri Teknoloji</small></span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Menüyü aç</span></button>
+        <nav class="site-nav" id="site-nav" aria-label="Ana menü">
+          <a href="kurumsal.html">Kurumsal</a><a href="teknoloji-alanlari.html">Teknoloji Alanları</a><a href="arastirma-ip.html">Araştırma &amp; IP</a><a href="yazilar.html" aria-current="page">Çalışmalar</a><a class="nav-cta" href="index.html#iletisim">İletişim</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <header class="article-header">
+        <div class="container">
+          <div class="article-meta"><span>EMI yaklaşımı</span><span>Güç elektroniği</span><span>5 dakika</span></div>
+          <h1>EMI analizinde kaynak, yol ve alıcı birlikte düşünülmelidir.</h1>
+          <p class="lead">Elektromanyetik girişim yalnızca çıkışa bir filtre ekleme problemi değildir; gürültünün nerede oluştuğu, nasıl taşındığı ve neyi etkilediği birlikte incelenir.</p>
+        </div>
+      </header>
+      <div class="container article-shell">
+        <article class="article-body">
+          <p>Hızlı gerilim ve akım değişimleri, güç elektroniğinin doğal bir parçasıdır. Bu değişimler parazitik kapasiteler, ortak empedanslar ve manyetik kuplaj üzerinden sistemin başka noktalarına taşınabilir.</p>
+          <h2>Kaynak</h2>
+          <p>Anahtarlama düğümleri, diyot geri toparlanması, kapı sürme geçişleri ve yüksek di/dt akım çevrimleri başlıca gürültü kaynaklarıdır. Kaynağın genliği kadar spektral içeriği ve fiziksel konumu da önemlidir.</p>
+          <h2>Kuplaj yolu</h2>
+          <p>Gürültü iletkenler üzerinden iletilmiş, elektrik alan üzerinden kapasitif veya manyetik alan üzerinden endüktif olarak taşınabilir. Şasi, kablo ekranı ve referans düzlemleri bu yolun parçasıdır.</p>
+          <h2>Alıcı</h2>
+          <p>Hassas analog ölçüm, haberleşme hattı, kontrolcü veya çevredeki başka bir ekipman gürültünün alıcısı olabilir. Aynı gürültü seviyesi farklı alıcılarda farklı sonuç doğurur.</p>
+          <ul>
+            <li>Kaynakta anahtarlama davranışını ve kritik çevrimleri iyileştirmek</li>
+            <li>Kuplaj yolunu yerleşim, ekranlama ve referans yönetimiyle sınırlamak</li>
+            <li>Alıcının bağışıklığını filtreleme ve arayüz tasarımıyla artırmak</li>
+          </ul>
+          <div class="callout"><p><strong>ARF yaklaşımı:</strong> Filtre değeri seçmeden önce gürültünün ortak mod mu diferansiyel mod mu olduğu ve baskın kuplaj yolunun nereden geçtiği belirlenir.</p></div>
+          <h2>Standart adı tek başına yeterli değildir</h2>
+          <p>MIL-STD-461 gibi dokümanlar farklı ekipman ve platform bağlamlarında emisyon ve bağışıklık gereksinimleri tanımlar. Uygulanacak yöntem, proje gereksinimi ve test konfigürasyonu belirlenmeden genel bir “uyumluluk” sonucu çıkarılamaz.</p>
+          <h2>Bu not neyi kanıtlamaz?</h2>
+          <p>İçerik, ARF tarafından tamamlanmış bir EMI testi veya standart uygunluğu beyanı değildir. Kamuya açık resmî dokümanlar ve üretici kaynakları üzerinden analiz yaklaşımını açıklar.</p>
+        </article>
+        <aside class="article-aside">
+          <div class="aside-card"><strong>Kapsam</strong><p>EMI kaynakları, kuplaj yolları ve sistem bağışıklığı.</p></div>
+          <div class="aside-card">
+            <strong>Birincil kaynaklar</strong>
+            <ul class="source-list">
+              <li><a href="https://quicksearch.dla.mil/qsdocdetails.aspx?ident_number=35789" rel="noreferrer">DLA — MIL-STD-461 kaydı</a></li>
+              <li><a href="https://www.ti.com/lit/pdf/snoa946" rel="noreferrer">Texas Instruments — Half-bridge design guide</a></li>
+              <li><a href="https://www.infineon.com/assets/row/public/documents/24/42/infineon-coolgan-high-voltage-power-transistors-for-pcb-layout-optimization-applicationnotes-en.pdf" rel="noreferrer">Infineon — CoolGaN layout note</a></li>
+            </ul>
+          </div>
+          <a class="button button-secondary" href="yazilar.html">Tüm notlar</a>
+        </aside>
+      </div>
+    </main>
+    <footer class="site-footer"><div class="container footer-bottom"><span>© <span data-year>2026</span> ARF İleri Teknoloji</span><span>Pendik, İstanbul / Türkiye · Kuruluş hazırlığında</span></div></footer>
+    <script src="script-v4.js?v=20260729-1"></script>
+  </body>
+</html>
