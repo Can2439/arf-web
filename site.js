@@ -108,7 +108,7 @@
   }
 
   /* Videolar: yalnızca görünürken oynat */
-  var videos = Array.prototype.slice.call(document.querySelectorAll("[data-lazy-video]"));
+  var videos = Array.prototype.slice.call(document.querySelectorAll("[data-lazy-video], [data-motion-frame] video"));
   var saveData = navigator.connection && navigator.connection.saveData;
   if (videos.length && !reduceMotion && !saveData && "IntersectionObserver" in window) {
     var load = function (v) {
@@ -122,6 +122,7 @@
         var v = entry.target;
         if (entry.isIntersecting) {
           load(v);
+          if (v.dataset.userPaused) return;
           var playing = v.play();
           if (playing && playing.catch) playing.catch(function () {});
         } else if (!v.paused) {
@@ -131,4 +132,22 @@
     }, { rootMargin: "200px 0px", threshold: 0.15 });
     videos.forEach(function (v) { io.observe(v); });
   }
+
+  /* Hareketi durdur / başlat düğmeleri */
+  document.querySelectorAll("[data-motion-frame]").forEach(function (frame) {
+    var btn = frame.querySelector(".motion-toggle");
+    var v = frame.querySelector("video");
+    if (!btn || !v) return;
+    if (reduceMotion || saveData) { btn.hidden = true; return; }
+    btn.addEventListener("click", function () {
+      var stop = btn.getAttribute("aria-pressed") !== "true";
+      btn.setAttribute("aria-pressed", String(stop));
+      btn.textContent = stop ? "Hareketi başlat" : "Hareketi durdur";
+      if (stop) { v.dataset.userPaused = "1"; v.pause(); }
+      else {
+        delete v.dataset.userPaused;
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      }
+    });
+  });
 })();

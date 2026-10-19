@@ -39,8 +39,8 @@ Teknik kapsam, güç elektroniği ve inverter sağlık izleme ekseninde tutulur;
 ├── assets
 │   ├── brand
 │   └── media
-├── styles.css
-├── script.js
+├── site.css      # tüm sayfaların tek stil dosyası
+├── site.js       # menü, osiloskop izi, video yönetimi
 ├── robots.txt
 ├── sitemap.xml
 └── CNAME
@@ -63,11 +63,12 @@ filmini kullanır. V6 videolar kısa anahtar-kare aralığı, `faststart`, sessi
 oynatım ve kontrollü döngü geçişiyle kaydırmaya bağlı kare arama için
 hazırlanmıştır.
 
-Ana sayfa herhangi bir animasyon framework'üne bağlı değildir. Doğal tarayıcı
-kaydırmasını izleyen `script-v6.js`; açılış, iki mihenk taşı, sistem katmanları
-ve final sahnelerini ilerleme değerine göre yönetir. Mobil cihazlarda ağır kare
-arama yerine optimize edilmiş oynatım ve crossfade; hareket azaltma tercihinde
-ise poster tabanlı durağan anlatım kullanılır.
+Site herhangi bir framework'e bağlı değildir. Tüm sayfalar tek `site.css` ve
+`site.js` dosyasını kullanır. Koyu teknik tasarımda kırmızı güç eksenini
+(Korunan Enerji Çekirdeği), turkuaz ölçüm ve Edge AI eksenini (Dengelenen Enerji
+Omurgası) temsil eder. Ana sayfadaki osiloskop izi kavramsal bir gösterimdir ve
+yalnızca bir kez çizilir. Videolar yalnızca ekranda görünürken oynar; hareket
+azaltma veya veri tasarrufu tercihinde poster görselleri gösterilir.
 
 V4 hareket filmlerini yeniden üretmek için:
 

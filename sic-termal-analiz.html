@@ -7,7 +7,7 @@
     <meta name="description" content="Güç elektroniğinde birleşim noktasından dış ortama uzanan termal yolun sistem tasarımındaki yeri.">
     <link rel="canonical" href="https://arftech.tr/sic-termal-analiz.html">
     <link rel="icon" href="favicon.png" type="image/png">
-    <meta name="theme-color" content="#f3f3f0">
+    <meta name="theme-color" content="#141a1f">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="tr_TR">
     <meta property="og:site_name" content="ARF İleri Teknoloji">
@@ -16,18 +16,28 @@
     <meta property="og:url" content="https://arftech.tr/sic-termal-analiz.html">
     <meta property="og:image" content="https://arftech.tr/assets/media/v6/arf-balanced-backbone-scroll.webp">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles-v4.css?v=20260726-1">
-    <link rel="stylesheet" href="styles-v7.css?v=20260729-1">
+    <link rel="preload" href="assets/fonts/inter-tight-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="site.css?v=20261019-2">
   </head>
-  <body class="cinematic-site article-v4 brand-v7" data-scene="harvesting">
+  <body class="page-article">
     <a class="skip-link" href="#main">İçeriğe geç</a>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand brand-modern" href="index.html" aria-label="ARF İleri Teknoloji ana sayfa"><span class="brand-mark-wrap"><img class="brand-mark" src="assets/brand/arf-mark.png" width="512" height="512" alt=""></span><span class="brand-type"><strong>ARF</strong><small>İleri Teknoloji</small></span></a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><span class="sr-only">Menüyü aç</span></button>
+    <header class="site-header" data-header>
+      <div class="wrap header-inner">
+        <a class="brand" href="index.html" aria-label="ARF İleri Teknoloji ana sayfa">
+          <img src="assets/brand/arf-logo-light.png" width="1200" height="260" alt="ARF İleri Teknoloji">
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+          <span class="menu-toggle-bars" aria-hidden="true"></span>
+          <span class="sr-only">Menü</span>
+        </button>
+
         <nav class="site-nav" id="site-nav" aria-label="Ana menü">
-          <a href="kurumsal.html">Kurumsal</a><a href="teknoloji-alanlari.html">Teknoloji Alanları</a><a href="arastirma-ip.html">Araştırma &amp; IP</a><a href="yazilar.html" aria-current="page">Çalışmalar</a><a class="nav-cta" href="index.html#iletisim">İletişim</a>
+          <a href="kurumsal.html">Kurumsal</a>
+          <a href="teknoloji-alanlari.html">Teknoloji alanları</a>
+          <a href="arastirma-ip.html">Araştırma &amp; IP</a>
+          <a href="yazilar.html" aria-current="page">Çalışmalar</a>
+          <a class="nav-cta" href="index.html#iletisim">İletişim</a>
         </nav>
       </div>
     </header>
@@ -71,7 +81,32 @@
         </aside>
       </div>
     </main>
-    <footer class="site-footer"><div class="container footer-bottom"><span>© <span data-year>2026</span> ARF İleri Teknoloji</span><span>Pendik, İstanbul / Türkiye · Kuruluş hazırlığında</span></div></footer>
-    <script src="script-v4.js?v=20260729-1"></script>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <img src="assets/brand/arf-logo-light.png" width="1200" height="260" alt="ARF İleri Teknoloji" loading="lazy">
+          <p>Powering the future</p>
+        </div>
+        <div>
+          <h2 class="footer-title">Konum</h2>
+          <p>Teknopark İstanbul<br>Pendik, İstanbul / Türkiye</p>
+        </div>
+        <div>
+          <h2 class="footer-title">Ekosistem</h2>
+          <p>SAYZEK Ekosistem Üyesi<br><a href="mailto:info@arftech.tr">info@arftech.tr</a></p>
+        </div>
+        <nav class="footer-nav" aria-label="Alt menü">
+          <h2 class="footer-title">Sayfalar</h2>
+          <a href="kurumsal.html">Kurumsal</a>
+          <a href="teknoloji-alanlari.html">Teknoloji alanları</a>
+          <a href="arastirma-ip.html">Araştırma &amp; IP</a>
+          <a href="yazilar.html">Çalışmalar</a>
+        </nav>
+      </div>
+      <div class="wrap footer-bottom">
+        <span>© <span data-year>2026</span> ARF İleri Teknoloji</span>
+      </div>
+    </footer>
+    <script src="site.js?v=20261019-2" defer></script>
   </body>
 </html>
